@@ -26,7 +26,7 @@ class Stock extends Component
 
         return (
             <div className="App">
-                <h1>Hello, React!</h1>
+                {/* <h1>Hello, React!</h1> */}
                 <DrawChart arg = {this.state} option={this.props.option}/>
             </div>
         );

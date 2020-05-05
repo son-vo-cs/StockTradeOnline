@@ -119,9 +119,10 @@ class DrawChart extends Component
                     data={this.state}
                     options={{
                         title:{
-                            display:true,
+                            display:false,
                             text: tempData.displayDay,
-                            fontSize:20
+                            fontSize:20,
+                            position:'left'
                         },
                         legend:{
                             display:false,
