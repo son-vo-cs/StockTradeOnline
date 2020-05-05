@@ -25,6 +25,7 @@ class Test extends Component
       var option = 
       {
         symbol: "AAPL",
+        hideSymbol: false,
         showButs: false,
         showTitle: true,
         prices: [1,2,3],
