@@ -49,7 +49,7 @@ class Stock extends Component
                 return response.json();
             })
             .then(content => {
-                var data = convertData(content, this.props.option.symbol);
+                var data = convertData(content, "");
                 this.setState({
                     data: data,
                     displayDay: -1,

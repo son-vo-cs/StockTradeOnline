@@ -24,8 +24,7 @@ class Test extends Component
     render() {
       var option = 
       {
-        symbol: "AAPL",
-        hideSymbol: false,
+        symbol: "SPY",
         showButs: false,
         showTitle: true,
         prices: [1,2,3],
