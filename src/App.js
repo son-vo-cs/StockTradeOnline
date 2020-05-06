@@ -7,7 +7,8 @@ import Stock from './component/Stock/Stock'
 import Header from './component/Header/Header'
 import Register from './component/User/Register'
 import Test from './component/Stock/Test'
-
+import Login from "./component/User/Login"
+import Buy from "./component/Transaction/Buy"
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
             <Route exact path='/stock' component={Stock}/>
             <Route exact path='/register' component={Register}/>
             <Route exact path='/test' component={Test}/>
+            <Route exact path='/login' component={Login}/>
+            <Route exact path='/buy' component={Buy}/>
         </Switch>
     </BrowserRouter>
 </React.Fragment>
