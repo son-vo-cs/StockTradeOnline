@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 
 import Stock from './Stock'
 import {Line} from 'react-chartjs-2';
-
+import SearchBar from './SearchBar'
 
 const data = {
   labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
@@ -33,9 +33,13 @@ class Test extends Component
         height: 300,
         size: 'small'
       }
+      var aa = {"aapl": "AAPL"};
         return (
-          <div  style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '100vh'}}>
-            <Stock option={option}></Stock>
+          // <div  style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '100vh'}}>
+          //   <Stock option={option}></Stock>
+          // </div>
+          <div>
+            <SearchBar argument={aa}></SearchBar>
           </div>
         );
       }

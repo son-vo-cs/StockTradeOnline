@@ -2,6 +2,20 @@ import React, {Component} from 'react';
 // import "./Buy.scss";
 class SearchBar extends React.Component  {
 
+    constructor(props)
+    {
+        super(props);
+        this.state = 
+        {
+
+        }
+    }
+    componentDidMount(){
+        this.setState(this.props.argument);
+        
+    }
+
+
     handleSubmit = (event,closeModal) => {
         event.preventDefault();
         let body = {
@@ -17,6 +31,7 @@ class SearchBar extends React.Component  {
         return (
             <div>
                 <label htmlFor="Search"> search me</label>
+                <h1>{this.state["aapl"]}</h1>
                 <input type="text" value={"haha"}></input>
             </div>
 
