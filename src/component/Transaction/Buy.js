@@ -16,24 +16,8 @@ class Buy extends React.Component  {
         console.log(this.props,"innner")
         return (
             <div>
-                <div className="loginbox">
-                    <h1 className>Login</h1>
-                    <h6>Please enter your e-mail and password:</h6>
-                    <form onSubmit={(event) => this.handleSubmit(event,this.props.closeModal)}>
-                        <div className="inner-icon left-addon">
-                            <span className="glyphicon glyphicon-user"/>
-                            <input type="email" name="email" placeholder="Email" required/>
-                        </div>
-                        <div className="inner-icon left-addon">
-                            <span className="glyphicon glyphicon-lock"/>
-                            <input type="password" name="psw" placeholder="Password" required/>
-                        </div>
-                        <input type="submit" name="" value="Login"/>
-
-                        <a href="/register">Don't have an account? Signup here</a>
-                    </form>
-                </div>
-
+                <label htmlFor="Search"> search me</label>
+                <input type="text" value={"haha"}></input>
             </div>
 
 
