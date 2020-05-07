@@ -11,7 +11,7 @@ class SearchBar extends React.Component  {
         }
     }
     componentDidMount(){
-        this.setState(this.props.argument);
+        // this.setState(this.props.argument);
         
     }
 
@@ -31,7 +31,6 @@ class SearchBar extends React.Component  {
         return (
             <div>
                 <label htmlFor="Search"> search me</label>
-                <h1>{this.state["aapl"]}</h1>
                 <input type="text" value={"haha"}></input>
             </div>
 
