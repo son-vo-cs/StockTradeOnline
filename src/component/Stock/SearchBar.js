@@ -7,10 +7,12 @@ class SearchBar extends React.Component  {
         super(props);
         this.state = 
         {
-            "AAPL": "Apple",
-            "Apple": "AAPL",
-            "MSFT": "Microsoft Inc",
-            "Microsoft Inc": "MSFT",
+            data:{
+                "AAPL": "Apple",
+                "Apple": "AAPL",
+                "MSFT": "Microsoft Inc",
+                "Microsoft Inc": "MSFT",
+            },
             arr: []
         }
     }
@@ -35,7 +37,10 @@ class SearchBar extends React.Component  {
         return (
             <div>
                 <label htmlFor="Search"> search me</label>
-                <h1>{this.state.arr[0]}</h1>
+                    {
+                        Object.entries(this.state.data).filter( ([key,val]) => {return key.includes("Mi") || val.includes("Mi")} ).map( ([key,val]) => <h1>{key}</h1> )
+                    }
+               
                 <input type="text" value={"haha"}></input>
             </div>
 
