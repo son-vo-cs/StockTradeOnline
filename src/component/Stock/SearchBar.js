@@ -7,11 +7,15 @@ class SearchBar extends React.Component  {
         super(props);
         this.state = 
         {
-
+            "AAPL": "Apple",
+            "Apple": "AAPL",
+            "MSFT": "Microsoft Inc",
+            "Microsoft Inc": "MSFT",
+            arr: []
         }
     }
     componentDidMount(){
-        // this.setState(this.props.argument);
+        // this.setState({arr: this.props.argument.list});
         
     }
 
@@ -31,6 +35,7 @@ class SearchBar extends React.Component  {
         return (
             <div>
                 <label htmlFor="Search"> search me</label>
+                <h1>{this.state.arr[0]}</h1>
                 <input type="text" value={"haha"}></input>
             </div>
 
