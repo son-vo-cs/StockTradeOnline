@@ -17,7 +17,7 @@ class SearchBar extends React.Component  {
         }
     }
     componentDidMount(){
-        // this.setState({arr: this.props.argument.list});
+        this.setState({data: this.props.argument.data});
         
     }
 
