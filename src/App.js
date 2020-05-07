@@ -9,6 +9,7 @@ import Register from './component/User/Register'
 import Test from './component/Stock/Test'
 import Login from "./component/User/Login"
 import Buy from "./component/Transaction/Buy"
+import SearchBar from "./component/Stock/SearchBar"
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route exact path='/test' component={Test}/>
             <Route exact path='/login' component={Login}/>
             <Route exact path='/buy' component={Buy}/>
+            <Route exact path='/search' component={SearchBar}/>
         </Switch>
     </BrowserRouter>
 </React.Fragment>
