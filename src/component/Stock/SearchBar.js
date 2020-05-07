@@ -13,7 +13,7 @@ class SearchBar extends React.Component  {
                 "MSFT": "Microsoft Inc",
                 "Microsoft Inc": "MSFT",
             },
-            arr: []
+            typedText: ""
         }
     }
     componentDidMount(){
@@ -33,7 +33,6 @@ class SearchBar extends React.Component  {
 
     };
     render(){
-        console.log(this.props,"innner")
         return (
             <div>
                 <label htmlFor="Search"> search me</label>
@@ -41,7 +40,7 @@ class SearchBar extends React.Component  {
                         Object.entries(this.state.data).filter( ([key,val]) => {return key.includes("Mi") || val.includes("Mi")} ).map( ([key,val]) => <h1>{key}</h1> )
                     }
                
-                <input type="text" value={"haha"}></input>
+                <input type="text" value={this.state.typedText} onChange={}></input>
             </div>
 
 
