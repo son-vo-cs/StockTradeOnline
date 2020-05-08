@@ -42,7 +42,10 @@ class SearchBar extends React.Component  {
             <div>
                 <label htmlFor="Search"> search me</label>
                     {
-                        Object.entries(this.state.data).filter( ([key,val]) => {return this.state.typedText.length>=1 && (key.includes(this.state.typedText) || val.includes(this.state.typedText) )} ).map( ([key,val]) => <h1>{key}</h1> )
+                        // Object.entries(this.state.data).filter( ([key,val]) => 
+                        // {return this.state.typedText.length>=1 && (key.includes(this.state.typedText) || val.includes(this.state.typedText) )} )
+                        // .map( ([key,val]) => <h1>{key}</h1> )
+                        filterSearch(this.state.data, this.state.typedText).map(([key,val]) => <h1>{key}</h1>)
                     }
                
                 <input type="text" value={this.state.typedText} onChange={this.handleChange}></input>
@@ -51,5 +54,17 @@ class SearchBar extends React.Component  {
 
         );}
 };
+
+function filterSearch(data, typeText)
+{
+    typeText = typeText.toLowerCase();
+    return Object.entries(data).filter( ([key,val]) => 
+        {
+            key = key.toLowerCase();
+            val = val.toLowerCase();
+            return typeText.length>=1 && (key.includes(typeText) || val.includes(typeText) )
+        })
+                        
+}
 
 export default SearchBar;
