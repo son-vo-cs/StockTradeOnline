@@ -1,0 +1,28 @@
+.itemSearch
+{
+    border: none;
+    outline: none;
+    width: 240px;
+    height: 40px;
+    background: hsl(186, 41%, 90%);
+    color: black;
+    font-size: 16px;
+    text-align:center;
+    box-sizing: border-box;
+    padding: 10;
+    margin:15;
+    align-items: center;
+    justify-content: center;
+}
+.itemSearch:hover,
+.close:focus {
+    background: hsl(186, 69%, 85%);
+    cursor: pointer;
+}
+
+.searchBar
+{
+    width: 240px;
+    height: 40px;
+    text-align: center;
+}

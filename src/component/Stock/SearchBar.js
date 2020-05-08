@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './SearchBar.scss'
 // import "./Buy.scss";
 class SearchBar extends React.Component  {
 
@@ -40,15 +41,17 @@ class SearchBar extends React.Component  {
     render(){
         return (
             <div>
-                <label htmlFor="Search"> search me</label>
+                {/* <label htmlFor="Search"> search me</label> */}
+                
+                <input type="text" value={this.state.typedText} onChange={this.handleChange} className="searchBar"></input>
                     {
                         // Object.entries(this.state.data).filter( ([key,val]) => 
                         // {return this.state.typedText.length>=1 && (key.includes(this.state.typedText) || val.includes(this.state.typedText) )} )
                         // .map( ([key,val]) => <h1>{key}</h1> )
-                        filterSearch(this.state.data, this.state.typedText).map(([key,val]) => <h1>{key}</h1>)
+                        // filterSearch(this.state.data, this.state.typedText).map(([key,val]) => <h1>{key}</h1>)
+                        filterSearch(this.state.data, this.state.typedText).map( key => <h1 className="itemSearch">{key}<br/>{this.state.data[key]}</h1>)
                     }
-               
-                <input type="text" value={this.state.typedText} onChange={this.handleChange}></input>
+                {/* <h1 className="itemSearch">tustutu<br/>haha</h1> */}
             </div>
 
 
@@ -58,12 +61,15 @@ class SearchBar extends React.Component  {
 function filterSearch(data, typeText)
 {
     typeText = typeText.toLowerCase();
-    return Object.entries(data).filter( ([key,val]) => 
+    var symbols = [];
+    Object.entries(data).map( ([key,val]) => 
         {
-            key = key.toLowerCase();
-            val = val.toLowerCase();
-            return typeText.length>=1 && (key.includes(typeText) || val.includes(typeText) )
+            var lowKey = key.toLowerCase();
+            var lowVal = val.toLowerCase();
+            if (typeText.length>=1 && (lowKey.includes(typeText) || lowVal.includes(typeText) ))
+                symbols.push(key);
         })
+    return symbols.sort();
                         
 }
 
