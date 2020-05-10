@@ -12,7 +12,7 @@ class Buy extends React.Component  {
         {
             ticket: "SPY",
             fund: 0,
-            price: 240,
+            price: 240.3,
             cost:0,
             shares:0
         }
@@ -52,7 +52,7 @@ class Buy extends React.Component  {
                                 </Col>
                                 
                                 <Col>
-                                    <input type="text" className="field-style" pattern="[0-9]*" name="shares"  placeholder="0" required/>
+                                    <input type="text" className="field-style" pattern="[0-9]*" name="shares" onChange={this.handleChange} />
                                 </Col>
                                 
                         </Row>
