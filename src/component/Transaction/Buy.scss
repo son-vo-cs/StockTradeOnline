@@ -18,14 +18,32 @@ body{
 }
 .field-holder
 {
-  margin-left: 20px;
+  margin-left: 30px;
+  
 }
 
-.field-style
+
+.field-style:not(:focus)
 {
   text-align: center;
-  height:50;
+  height:40px;
+  width:80px;
+  // outline:none;
+  // border: none;
+  // border-bottom: 1px solid black;
 }
+
+.field-style:focus
+{
+  text-align: center;
+  height:40px;
+  width:80px;
+  // outline:none;
+  // border: none;
+  // border-bottom: 1px solid black;
+}
+
+
 
 .loginbox{
   width: 400px;

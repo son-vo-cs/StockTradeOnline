@@ -9,7 +9,8 @@ class Buy extends React.Component  {
         this.state = 
         {
             ticket: "SPY",
-            fund: 0
+            fund: 0,
+            price: 240,
         }
     }
     componentDidMount()
@@ -36,7 +37,7 @@ class Buy extends React.Component  {
                             
                                 <h6>Number of Shares</h6>
                                 <div className="field-holder">
-                                    <input type="text" className="field-style" pattern="[0-9]*" name="email" placeholder="Email" required/>
+                                    <input type="text" className="field-style" pattern="[0-9]*" name="email"  placeholder="0" required/>
                                 </div>
                                 
                             
