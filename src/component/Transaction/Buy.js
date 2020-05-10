@@ -13,6 +13,7 @@ class Buy extends React.Component  {
             ticket: "SPY",
             fund: 0,
             price: 240,
+            cost:0
         }
     }
     componentDidMount()
@@ -29,6 +30,12 @@ class Buy extends React.Component  {
         alert(body.email);
 
     };
+
+    handleChange = (event) => {
+        this.setState({typedText: event.target.value});
+
+    };
+
     render(){
         return (
             <div>
@@ -67,13 +74,10 @@ class Buy extends React.Component  {
                                 </Col>
                                 <Col><h5>${this.state.price}</h5></Col>
                         </Row>
-                        <div className="inner-icon left-addon">
-                            <span className="glyphicon glyphicon-lock"/>
-                            <input type="password" name="psw" placeholder="Password" required/>
-                        </div>
-                        <input type="submit" name="" value="Login"/>
+                       
+                        <input type="submit" name="" value="Place Order"/>
 
-                        <a href="/register">Don't have an account? Signup here</a>
+                        {/* <a href="/register">Don't have an account? Signup here</a> */}
                     </form>
                 </div>
             </div>
