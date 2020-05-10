@@ -37,7 +37,7 @@ class Sell extends React.Component  {
     };
 
     handleChange = (event) => {
-        this.setState({shares: event.target.value, cost: event.target.value*this.state.price});
+        this.setState({shares: event.target.value, cost: event.target.value*this.state.price.toFixed(2)});
 
     };
 
@@ -68,7 +68,7 @@ class Sell extends React.Component  {
                                         <h5>Market Price </h5>
                                     </div>
                                 </Col>
-                                <Col><h5>${this.state.price}</h5></Col>
+                                <Col><h5>${this.state.price.toFixed(2)}</h5></Col>
                                 
                         </Row>
                         <Row className="bottom">
@@ -78,7 +78,7 @@ class Sell extends React.Component  {
                                         <h5>Estimated Credit </h5>
                                     </div>
                                 </Col>
-                                <Col><h5>${this.state.cost}</h5></Col>
+                                <Col><h5>${this.state.cost.toFixed(2)}</h5></Col>
                         </Row>
                        
                         <input type="submit" name="" value="Place Order"/>
