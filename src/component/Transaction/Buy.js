@@ -49,7 +49,7 @@ class Buy extends React.Component  {
                         </div>
                         <div className="row">
                             
-                                <h6>Market Price</h6>
+                                <h6>Estimated Cost</h6>
                                 <div className="field-holder">
                                     <h6 className="label-position">${this.state.price}</h6>
                                 </div>
