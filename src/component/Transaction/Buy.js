@@ -22,13 +22,17 @@ class Buy extends React.Component  {
 
     }
     handleSubmit = (event,closeModal) => {
-        event.preventDefault();
-        let body = {
-            email: event.target.email.value,
-            password: event.target.psw.value
-        };
+        // event.preventDefault();
+        // let body = {
+        //     email: event.target.email.value,
+        //     password: event.target.psw.value
+        // };
 
-        alert(body.email);
+        // alert(body.email);
+        if (this.state.fund < this.state.cost)
+        {
+            alert("You don't have enough fund to place this order!!");
+        }
 
     };
 
@@ -42,7 +46,7 @@ class Buy extends React.Component  {
             <div>
                 <div className="loginbox">
                     <h1>Buy {this.state.ticket}</h1>
-                    <h5 className={"valid-value"}>(${this.state.fund} Available)</h5>
+                    <h5 className={this.state.fund >= this.state.cost ? "valid-value" : "invalid-value"}>(${this.state.fund} Available)</h5>
                     <form onSubmit={(event) => this.handleSubmit(event,this.props.closeModal)}>
                         <Row className="bottom">
                             
@@ -74,7 +78,7 @@ class Buy extends React.Component  {
                                         <h5>Estimated Cost </h5>
                                     </div>
                                 </Col>
-                                <Col><h5 style={{size:10, marginBottom:40}}>${this.state.cost}</h5></Col>
+                                <Col><h5 className={this.state.fund >= this.state.cost ? "valid-value" : "invalid-value"}>${this.state.cost}</h5></Col>
                         </Row>
                        
                         <input type="submit" name="" value="Place Order"/>
