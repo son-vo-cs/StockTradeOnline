@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import "./Buy.scss";
+
 class Buy extends React.Component  {
 
     constructor(props)
@@ -31,9 +32,14 @@ class Buy extends React.Component  {
                 <div className="loginbox">
                     <h1 className>Buy {this.state.ticket}</h1>
                     <form onSubmit={(event) => this.handleSubmit(event,this.props.closeModal)}>
-                        <div className="inner-icon left-addon">
-                            <span className="glyphicon glyphicon-user"/>
-                            <input type="email" name="email" placeholder="Email" required/>
+                        <div className="row">
+                            
+                                <h6>Number of Shares</h6>
+                                <div>
+                                    <input type="text" pattern="[0-9]*" name="email" placeholder="Email" required/>
+                                </div>
+                                
+                            
                         </div>
                         <div className="inner-icon left-addon">
                             <span className="glyphicon glyphicon-lock"/>
@@ -44,7 +50,6 @@ class Buy extends React.Component  {
                         <a href="/register">Don't have an account? Signup here</a>
                     </form>
                 </div>
-
             </div>
 
 

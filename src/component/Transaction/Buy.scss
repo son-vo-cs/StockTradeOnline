@@ -10,6 +10,14 @@ body{
 }
 
 
+.row .row
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
 .loginbox{
   width: 400px;
   height: 325px;
