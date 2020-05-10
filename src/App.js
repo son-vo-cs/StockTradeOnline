@@ -9,6 +9,7 @@ import Register from './component/User/Register'
 import Test from './component/Stock/Test'
 import Login from "./component/User/Login"
 import Buy from "./component/Transaction/Buy"
+import Sell from "./component/Transaction/Sell"
 import SearchBar from "./component/Stock/SearchBar"
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
             <Route exact path='/test' component={Test}/>
             <Route exact path='/login' component={Login}/>
             <Route exact path='/buy' component={Buy}/>
+            <Route exact path='/sell' component={Sell}/>
             <Route exact path='/search' component={SearchBar}/>
         </Switch>
     </BrowserRouter>

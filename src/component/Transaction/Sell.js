@@ -11,7 +11,7 @@ class Sell extends React.Component  {
         this.state = 
         {
             ticket: "SPY",
-            fund: 0,
+            sharesAvail: 0,
             price: 240.3,
             cost:0,
             shares:0
@@ -22,7 +22,7 @@ class Sell extends React.Component  {
 
     }
     handleSubmit = (event,closeModal) => {
-        // event.preventDefault();
+        event.preventDefault();
         // let body = {
         //     email: event.target.email.value,
         //     password: event.target.psw.value
@@ -45,8 +45,8 @@ class Sell extends React.Component  {
         return (
             <div>
                 <div className="loginbox">
-                    <h1>Buy {this.state.ticket}</h1>
-                    <h5 className={this.state.fund >= this.state.cost ? "valid-value" : "invalid-value"}>(${this.state.fund} Available)</h5>
+                    <h1>Sell {this.state.ticket}</h1>
+                    <h5 className={this.state.sharesAvail >= this.state.shares ? "valid-value" : "invalid-value"}>(You own {this.state.sharesAvail} Shares)</h5>
                     <form onSubmit={(event) => this.handleSubmit(event,this.props.closeModal)}>
                         <Row className="bottom">
                             
@@ -75,10 +75,10 @@ class Sell extends React.Component  {
                             
                                 <Col>
                                     <div className="text-align">
-                                        <h5>Estimated Cost </h5>
+                                        <h5>Estimated Credit </h5>
                                     </div>
                                 </Col>
-                                <Col><h5 className={this.state.fund >= this.state.cost ? "valid-value" : "invalid-value"}>${this.state.cost}</h5></Col>
+                                <Col><h5>${this.state.cost}</h5></Col>
                         </Row>
                        
                         <input type="submit" name="" value="Place Order"/>

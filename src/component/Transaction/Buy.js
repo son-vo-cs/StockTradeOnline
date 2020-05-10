@@ -22,7 +22,7 @@ class Buy extends React.Component  {
 
     }
     handleSubmit = (event,closeModal) => {
-        // event.preventDefault();
+        event.preventDefault();
         // let body = {
         //     email: event.target.email.value,
         //     password: event.target.psw.value
