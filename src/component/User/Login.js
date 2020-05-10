@@ -15,7 +15,6 @@ class Login extends React.Component  {
 
     };
     render(){
-        console.log(this.props,"innner")
         return (
             <div>
                 <div className="loginbox">
