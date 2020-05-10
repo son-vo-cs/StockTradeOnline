@@ -41,7 +41,8 @@ class Buy extends React.Component  {
         return (
             <div>
                 <div className="loginbox">
-                    <h1 className>Buy {this.state.ticket}</h1>
+                    <h1>Buy {this.state.ticket}</h1>
+                    <h5 className={"valid-value"}>(${this.state.fund} Available)</h5>
                     <form onSubmit={(event) => this.handleSubmit(event,this.props.closeModal)}>
                         <Row className="bottom">
                             
@@ -73,7 +74,7 @@ class Buy extends React.Component  {
                                         <h5>Estimated Cost </h5>
                                     </div>
                                 </Col>
-                                <Col><h5>${this.state.cost}</h5></Col>
+                                <Col><h5 style={{size:10, marginBottom:40}}>${this.state.cost}</h5></Col>
                         </Row>
                        
                         <input type="submit" name="" value="Place Order"/>

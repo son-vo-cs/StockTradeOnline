@@ -10,6 +10,18 @@ body{
 }
 
 
+.valid-value
+{
+  margin-bottom: 40;
+  color:#2fcf9a;
+}
+
+
+.invalid-value
+{
+  margin-bottom: 40;
+  color:red;
+}
 
 .field-style:not(:focus)
 {
@@ -53,7 +65,7 @@ body{
 
 .loginbox{
   width: 500px;
-  height: 425px;
+  height: 500px;
   background: whitesmoke;
   top: 50%;
   left: 50%;
