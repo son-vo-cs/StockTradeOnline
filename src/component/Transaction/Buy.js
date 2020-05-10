@@ -35,8 +35,8 @@ class Buy extends React.Component  {
                         <div className="row">
                             
                                 <h6>Number of Shares</h6>
-                                <div>
-                                    <input type="text" pattern="[0-9]*" name="email" placeholder="Email" required/>
+                                <div className="field-holder">
+                                    <input type="text" className="field-style" pattern="[0-9]*" name="email" placeholder="Email" required/>
                                 </div>
                                 
                             
