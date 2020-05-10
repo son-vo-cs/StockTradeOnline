@@ -68,7 +68,7 @@ class Buy extends React.Component  {
                                         <h5>Market Price </h5>
                                     </div>
                                 </Col>
-                                <Col><h5>${this.state.price}</h5></Col>
+                                <Col><h5>${this.state.price.toFixed(2)}</h5></Col>
                                 
                         </Row>
                         <Row className="bottom">
@@ -78,7 +78,7 @@ class Buy extends React.Component  {
                                         <h5>Estimated Cost </h5>
                                     </div>
                                 </Col>
-                                <Col><h5 className={this.state.fund >= this.state.cost ? "valid-value" : "invalid-value"}>${this.state.cost}</h5></Col>
+                                <Col><h5 className={this.state.fund >= this.state.cost ? "valid-value" : "invalid-value"}>${this.state.cost.toFixed(2)}</h5></Col>
                         </Row>
                        
                         <input type="submit" name="" value="Place Order"/>
