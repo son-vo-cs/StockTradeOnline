@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import "./Buy.scss";
+import { Container, Row, Col } from 'reactstrap';
+import { left } from 'glamor';
 
 class Buy extends React.Component  {
 
@@ -33,27 +35,38 @@ class Buy extends React.Component  {
                 <div className="loginbox">
                     <h1 className>Buy {this.state.ticket}</h1>
                     <form onSubmit={(event) => this.handleSubmit(event,this.props.closeModal)}>
-                        <div className="row">
+                        <Row className="bottom">
                             
-                                <h6>Number of Shares</h6>
-                                <div className="field-holder">
+                                <Col>
+                                    <div className="text-align">
+                                        <h5>Number of Shares</h5>
+                                    </div>
+                                </Col>
+                                
+                                <Col>
                                     <input type="text" className="field-style" pattern="[0-9]*" name="shares"  placeholder="0" required/>
-                                </div>
-                        </div>
-                        <div className="row">
+                                </Col>
+                                
+                        </Row>
+                        <Row className="bottom">
                             
-                                <h6>Market Price</h6>
-                                <div className="field-holder">
-                                    <h6 className="label-position">${this.state.price}</h6>
-                                </div>
-                        </div>
-                        <div className="row">
+                                <Col>
+                                    <div className="text-align">
+                                        <h5>Market Price </h5>
+                                    </div>
+                                </Col>
+                                <Col><h5>${this.state.price}</h5></Col>
+                                
+                        </Row>
+                        <Row className="bottom">
                             
-                                <h6>Estimated Cost</h6>
-                                <div className="field-holder">
-                                    <h6 className="label-position">${this.state.price}</h6>
-                                </div>
-                        </div>
+                                <Col>
+                                    <div className="text-align">
+                                        <h5>Estimated Cost </h5>
+                                    </div>
+                                </Col>
+                                <Col><h5>${this.state.price}</h5></Col>
+                        </Row>
                         <div className="inner-icon left-addon">
                             <span className="glyphicon glyphicon-lock"/>
                             <input type="password" name="psw" placeholder="Password" required/>

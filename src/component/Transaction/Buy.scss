@@ -10,40 +10,13 @@ body{
 }
 
 
-.row
-{
-  display: flex;
-  // justify-content: center;
-  align-items: center;
-}
-
-.col
-{
-  display: flex;
-  // justify-content: center;
-  align-items: center;
-}
-
-.field-holder
-{
-  margin-left: 30%;
-  // float:left
-  // text-align: center;
-  // align-items: center;
-}
-
-.text-align
-{
-  float:right;
-}
 
 .field-style:not(:focus)
 {
   text-align: center;
-  height:40px;
-  width:80px;
-  align-items: right;
-  float:right;
+  height:30px;
+  width:100px;
+  align-items: left;
   // outline:none;
   // border: none;
   // border-bottom: 1px solid black;
@@ -52,28 +25,35 @@ body{
 .field-style:focus
 {
   text-align: center;
-  height:40px;
-  width:80px;
+  height:30px;
+  width:100px;
   align-items: left;
+  // margin-bottom: 50px;
+  
   // outline:none;
   // border: none;
   // border-bottom: 1px solid black;
 }
 
-
-.label-position
+.text-align
 {
+  text-align: center;
   // height:40px;
-  // width:80px;
-  // align-items: right;
-  // margin-right: 50px;
-  align-self: flex-end;
+  // width:40px;
+  margin-left: 0px;
+  position: absolute;
+  margin-bottom: 30px;
+  // align-items: left;
 }
 
+.bottom
+{
+  margin-bottom: 30px;
+}
 
 .loginbox{
-  width: 400px;
-  height: 525px;
+  width: 500px;
+  height: 625px;
   background: whitesmoke;
   top: 50%;
   left: 50%;
