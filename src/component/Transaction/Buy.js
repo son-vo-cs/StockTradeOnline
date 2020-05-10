@@ -29,7 +29,7 @@ class Buy extends React.Component  {
         console.log(this.props,"innner")
         return (
             <div>
-                <h1>Transfer to Stocktrade</h1>
+                <h1>Buy {this.state.ticket}</h1>
                 <label htmlFor="Search"> search me</label>
                 <input type="text" value={"haha"}></input>
             </div>
