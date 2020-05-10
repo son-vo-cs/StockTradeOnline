@@ -13,7 +13,8 @@ class Buy extends React.Component  {
             ticket: "SPY",
             fund: 0,
             price: 240,
-            cost:0
+            cost:0,
+            shares:0
         }
     }
     componentDidMount()
@@ -32,7 +33,7 @@ class Buy extends React.Component  {
     };
 
     handleChange = (event) => {
-        this.setState({typedText: event.target.value});
+        this.setState({shares: event.target.value, cost: event.target.value*this.state.price});
 
     };
 
@@ -72,7 +73,7 @@ class Buy extends React.Component  {
                                         <h5>Estimated Cost </h5>
                                     </div>
                                 </Col>
-                                <Col><h5>${this.state.price}</h5></Col>
+                                <Col><h5>${this.state.cost}</h5></Col>
                         </Row>
                        
                         <input type="submit" name="" value="Place Order"/>
