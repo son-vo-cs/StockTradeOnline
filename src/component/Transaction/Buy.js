@@ -37,10 +37,22 @@ class Buy extends React.Component  {
                             
                                 <h6>Number of Shares</h6>
                                 <div className="field-holder">
-                                    <input type="text" className="field-style" pattern="[0-9]*" name="email"  placeholder="0" required/>
+                                    <input type="text" className="field-style" pattern="[0-9]*" name="shares"  placeholder="0" required/>
                                 </div>
-                                
+                        </div>
+                        <div className="row">
                             
+                                <h6>Market Price</h6>
+                                <div className="field-holder">
+                                    <h6 className="label-position">${this.state.price}</h6>
+                                </div>
+                        </div>
+                        <div className="row">
+                            
+                                <h6>Market Price</h6>
+                                <div className="field-holder">
+                                    <h6 className="label-position">${this.state.price}</h6>
+                                </div>
                         </div>
                         <div className="inner-icon left-addon">
                             <span className="glyphicon glyphicon-lock"/>

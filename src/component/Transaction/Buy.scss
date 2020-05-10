@@ -13,21 +13,29 @@ body{
 .row
 {
   display: flex;
-  justify-content: center;
+  // justify-content: center;
   align-items: center;
 }
 .field-holder
 {
-  margin-left: 30px;
-  
+  margin-left: 30%;
+  // float:left
+  // text-align: center;
+  // align-items: center;
 }
 
+.text-align
+{
+  float:right;
+}
 
 .field-style:not(:focus)
 {
   text-align: center;
   height:40px;
   width:80px;
+  align-items: right;
+  float:right;
   // outline:none;
   // border: none;
   // border-bottom: 1px solid black;
@@ -38,16 +46,25 @@ body{
   text-align: center;
   height:40px;
   width:80px;
+  align-items: left;
   // outline:none;
   // border: none;
   // border-bottom: 1px solid black;
 }
 
 
+.label-position
+{
+  // height:40px;
+  // width:80px;
+  // align-items: right;
+  margin-left: 170%;
+}
+
 
 .loginbox{
   width: 400px;
-  height: 325px;
+  height: 525px;
   background: whitesmoke;
   top: 50%;
   left: 50%;
