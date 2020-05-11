@@ -14,7 +14,11 @@ class Deposit extends React.Component  {
             fund: 0,
             price: 240.3,
             cost:0,
-            shares:0
+            shares:0,
+            cards: 
+            {
+                "Bank of America": "5024",
+            }
         }
     }
     componentDidMount()
@@ -45,14 +49,14 @@ class Deposit extends React.Component  {
         return (
             <div>
                 <div className="loginbox">
-                    <h1>Buy {this.state.ticket}</h1>
-                    <h5 className={this.state.fund >= this.state.cost ? "valid-value" : "invalid-value"}>(${this.state.fund} Available)</h5>
+                    <h1>Transfer to StockTrade</h1>
+                    {/* <h5 className={this.state.fund >= this.state.cost ? "valid-value" : "invalid-value"}>(${this.state.fund} Available)</h5> */}
                     <form onSubmit={(event) => this.handleSubmit(event,this.props.closeModal)}>
                         <Row className="bottom">
                             
                                 <Col>
                                     <div className="text-align">
-                                        <h5>Number of Shares</h5>
+                                        <h5>Enter Amount</h5>
                                     </div>
                                 </Col>
                                 
@@ -65,7 +69,7 @@ class Deposit extends React.Component  {
                             
                                 <Col>
                                     <div className="text-align">
-                                        <h5>Market Price </h5>
+                                        <h5>Choose Your Card</h5>
                                     </div>
                                 </Col>
                                 <Col><h5>${this.state.price.toFixed(2)}</h5></Col>
@@ -86,7 +90,16 @@ class Deposit extends React.Component  {
                         {/* <a href="/register">Don't have an account? Signup here</a> */}
                     </form>
                 </div>
+
+
+                <div>
+                    hahasjdashjdhsj
+                </div>
+
+
             </div>
+
+
 
 
         );}
