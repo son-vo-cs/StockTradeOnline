@@ -16,15 +16,18 @@ class Deposit extends React.Component  {
             price: 240.3,
             cost:0,
             shares:0,
+            title:"",
             cards: 
             {
                 "Bank of America": "5024",
+                "Chase": "2012"
+
             }
         }
     }
     componentDidMount()
     {
-
+        this.setState({cards: Object.keys(this.state.cards)[0]});
     }
     handleSubmit = (event,closeModal) => {
         event.preventDefault();
