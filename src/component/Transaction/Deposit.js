@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import "./Deposit.scss";
 import { Container, Row, Col } from 'reactstrap';
+import { DropdownButton, Dropdown } from 'react-bootstrap';
 import { left } from 'glamor';
 
 class Deposit extends React.Component  {
@@ -93,7 +94,11 @@ class Deposit extends React.Component  {
 
 
                 <div>
-                    hahasjdashjdhsj
+                <DropdownButton id="dropdown-basic-button" title="Dropdown button">
+				<Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+				<Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+				<Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+			</DropdownButton>
                 </div>
 
 
