@@ -24,10 +24,11 @@ class Deposit extends React.Component  {
 
             }
         }
+        this.handleClick = this.handleClick.bind(this);
     }
     componentDidMount()
     {
-        this.setState({cards: Object.keys(this.state.cards)[0]});
+        this.setState({title: Object.keys(this.state.cards)[0]});
     }
     handleSubmit = (event,closeModal) => {
         event.preventDefault();
@@ -48,6 +49,11 @@ class Deposit extends React.Component  {
         this.setState({shares: event.target.value, cost: event.target.value*this.state.price});
 
     };
+
+    handleClick(tit){
+        this.setState({title:tit});
+    };
+
 
     render(){
         return (
@@ -97,11 +103,11 @@ class Deposit extends React.Component  {
 
 
                 <div>
-                <DropdownButton id="dropdown-basic-button" title="Dropdown button">
-				<Dropdown.Item style={{color: "red"}} href="#/action-1">Action</Dropdown.Item>
-				<Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-				<Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-			</DropdownButton>
+                <DropdownButton id="dropdown-basic-button" title={this.state.title}>
+                    <Dropdown.Item style={{color: "red"}} href="#/action-1" onClick={this.handleClick}>Action</Dropdown.Item>
+                    <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+                    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+			    </DropdownButton>
                 </div>
 
 
