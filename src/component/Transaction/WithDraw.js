@@ -12,7 +12,7 @@ class WithDraw extends React.Component  {
         this.state = 
         {
             ticket: "SPY",
-            fund: 0,
+            fund: 200,
             price: 240.3,
             cost:0,
             shares:0,
@@ -46,7 +46,7 @@ class WithDraw extends React.Component  {
     };
 
     handleChange = (event) => {
-        this.setState({shares: event.target.value, cost: event.target.value*this.state.price});
+        this.setState({shares: event.target.value, cost: event.target.value});
 
     };
 
@@ -72,7 +72,7 @@ class WithDraw extends React.Component  {
                                 </Col>
                                 
                                 <Col>
-                                    <input type="text" className="field-style" pattern="[0-9]*" name="amount" onChange={this.handleChange} />
+                                    <input type="text" className="field-style" pattern="[0-9]*" name="cost" onChange={this.handleChange} />
                                 </Col>
                                 
                         </Row>
