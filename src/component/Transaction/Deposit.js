@@ -88,7 +88,7 @@ class Deposit extends React.Component  {
                                     <DropdownButton style={{backgroundColor:"white"}} id="dropdown-basic-button" title={this.state.title}>
                                         {
                                             Object.entries(this.state.cards).map( ([key,val]) => 
-                                                <Dropdown.Item style={{color: "black", size:"20px"}}  onClick={(e)=> this.handleClick(key + " " + val)}>{key + " " + val}</Dropdown.Item>
+                                                <Dropdown.Item className="dropdown-item"  onClick={(e)=> this.handleClick(key + " " + val)}>{key + " " + val}</Dropdown.Item>
                                             )
                                         }
                                     </DropdownButton>
