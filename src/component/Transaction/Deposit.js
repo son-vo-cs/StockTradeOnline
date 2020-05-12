@@ -83,17 +83,17 @@ class Deposit extends React.Component  {
                                         <h5>Choose Your Card</h5>
                                     </div>
                                 </Col>
-                                <Col><h5>${this.state.price.toFixed(2)}</h5></Col>
-                                
-                        </Row>
-                        <Row className="bottom">
-                            
                                 <Col>
-                                    <div className="text-align">
-                                        <h5>Estimated Cost </h5>
-                                    </div>
+                                    
+                                    <DropdownButton style={{backgroundColor:"white"}} id="dropdown-basic-button" title={this.state.title}>
+                                        {
+                                            Object.entries(this.state.cards).map( ([key,val]) => 
+                                                <Dropdown.Item style={{color: "black", size:"20px"}}  onClick={(e)=> this.handleClick(key + " " + val)}>{key + " " + val}</Dropdown.Item>
+                                            )
+                                        }
+                                    </DropdownButton>
                                 </Col>
-                                <Col><h5 className={this.state.fund >= this.state.cost ? "valid-value" : "invalid-value"}>${this.state.cost.toFixed(2)}</h5></Col>
+                                
                         </Row>
                        
                         <input type="submit" name="" value="Place Order"/>
@@ -104,14 +104,6 @@ class Deposit extends React.Component  {
 
 
                 <div>
-                <DropdownButton id="dropdown-basic-button" title={this.state.title}>
-                    {/* {this.state.cards.map(([key,val]) => <Dropdown.Item style={{color: "red"}} href="#/action-1" onClick={this.handleClick(key)}>{key}</Dropdown.Item>} */}
-                    {
-                        Object.entries(this.state.cards).map( ([key,val]) => 
-                            <Dropdown.Item style={{color: "red"}}  onClick={(e)=> this.handleClick(key + " " + val)}>{key + " " + val}</Dropdown.Item>
-                        )
-                    }
-			    </DropdownButton>
                 </div>
 
 
