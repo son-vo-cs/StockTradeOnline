@@ -72,7 +72,7 @@ class WithDraw extends React.Component  {
                                 </Col>
                                 
                                 <Col>
-                                    <input type="text" className="field-style" pattern="[0-9]*" name="shares" onChange={this.handleChange} />
+                                    <input type="text" className="field-style" pattern="[0-9]*" name="amount" onChange={this.handleChange} />
                                 </Col>
                                 
                         </Row>
