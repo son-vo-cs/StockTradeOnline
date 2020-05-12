@@ -61,7 +61,7 @@ class WithDraw extends React.Component  {
             <div>
                 <div className="loginbox">
                     <h1>Transfer to Your Bank</h1>
-                    {/* <h5 className={this.state.fund >= this.state.cost ? "valid-value" : "invalid-value"}>(${this.state.fund} Available)</h5> */}
+                    <h5 className={this.state.fund >= this.state.cost ? "valid-value" : "invalid-value"}>(${this.state.fund} Available)</h5>
                     <form onSubmit={(event) => this.handleSubmit(event,this.props.closeModal)}>
                         <Row className="bottom">
                             
