@@ -58,10 +58,17 @@ body{
   // align-items: left;
 }
 
-.dropdown-item
+#dropdown-item
 {
   color:black;
   font-size: 15px;
+  margin-bottom: 5px;
+}
+
+#dropdown-menu
+{
+  background-color: white;
+  color:black;
 }
 
 .bottom
