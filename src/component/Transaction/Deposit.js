@@ -66,7 +66,7 @@ class Deposit extends React.Component  {
                         <Row className="bottom">
                             
                                 <Col>
-                                    <div className="text-align">
+                                    <div className="text-align2">
                                         <h5>Enter Amount</h5>
                                     </div>
                                 </Col>
@@ -96,7 +96,7 @@ class Deposit extends React.Component  {
                                 
                         </Row>
                        
-                        <input type="submit" name="" value="Place Order"/>
+                        <input type="submit" name="deposit" value="Deposit to StockTrade"/>
 
                         {/* <a href="/register">Don't have an account? Signup here</a> */}
                     </form>

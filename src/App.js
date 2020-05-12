@@ -11,8 +11,8 @@ import Login from "./component/User/Login"
 import Buy from "./component/Transaction/Buy"
 import Sell from "./component/Transaction/Sell"
 import Deposit from "./component/Transaction/Deposit"
+import WithDraw from "./component/Transaction/WithDraw"
 import SearchBar from "./component/Stock/SearchBar"
-
 
 function App() {
   return (
@@ -28,6 +28,7 @@ function App() {
             <Route exact path='/sell' component={Sell}/>
             <Route exact path='/search' component={SearchBar}/>
             <Route exact path='/deposit' component={Deposit}/>
+            <Route exact path='/withdraw' component={WithDraw}/>
         </Switch>
     </BrowserRouter>
 </React.Fragment>
