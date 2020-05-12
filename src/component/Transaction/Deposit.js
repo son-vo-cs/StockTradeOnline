@@ -28,7 +28,7 @@ class Deposit extends React.Component  {
     }
     componentDidMount()
     {
-        this.setState({title: Object.keys(this.state.cards)[0]});
+        this.setState({title: Object.keys(this.state.cards)[0] + " " + this.state.cards[Object.keys(this.state.cards)[0]]});
     }
     handleSubmit = (event,closeModal) => {
         event.preventDefault();
@@ -52,6 +52,7 @@ class Deposit extends React.Component  {
 
     handleClick(tit){
         this.setState({title:tit});
+        // this.state.title = tit;
     };
 
 
@@ -104,9 +105,12 @@ class Deposit extends React.Component  {
 
                 <div>
                 <DropdownButton id="dropdown-basic-button" title={this.state.title}>
-                    <Dropdown.Item style={{color: "red"}} href="#/action-1" onClick={this.handleClick}>Action</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                    {/* {this.state.cards.map(([key,val]) => <Dropdown.Item style={{color: "red"}} href="#/action-1" onClick={this.handleClick(key)}>{key}</Dropdown.Item>} */}
+                    {
+                        Object.entries(this.state.cards).map( ([key,val]) => 
+                            <Dropdown.Item style={{color: "red"}}  onClick={(e)=> this.handleClick(key + " " + val)}>{key + " " + val}</Dropdown.Item>
+                        )
+                    }
 			    </DropdownButton>
                 </div>
 
