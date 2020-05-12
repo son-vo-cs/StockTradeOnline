@@ -8,6 +8,7 @@ import Header from './component/Header/Header'
 import Register from './component/User/Register'
 import Test from './component/Stock/Test'
 import Login from "./component/User/Login"
+import Home from "./component/User/Home"
 import Buy from "./component/Transaction/Buy"
 import Sell from "./component/Transaction/Sell"
 import Deposit from "./component/Transaction/Deposit"
@@ -29,6 +30,7 @@ function App() {
             <Route exact path='/search' component={SearchBar}/>
             <Route exact path='/deposit' component={Deposit}/>
             <Route exact path='/withdraw' component={WithDraw}/>
+            <Route exact path='/home' component={Home}/>
         </Switch>
     </BrowserRouter>
 </React.Fragment>
