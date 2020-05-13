@@ -61,8 +61,7 @@ class Home extends Component
                   <img className="rounded mx-auto d-block logo" src={logo} width="35" alt="Casual Jacket"/>
                   <Nav className="ml-auto" style={{width:"30%"}} >
                       {/* <Nav.Link {...this.hoverStyle("#218a67","white","white","#218a67")} onClick={this.handleOpen}>{this.state.userStatus}</Nav.Link> */}
-                      <div {...this.hoverStyle("#2fcf9a","white","white","#2fcf9a")} onClick={this.handleOpen}>LOGIN</div>
-                      <div {...this.hoverStyle("#2fcf9a","white","white","#2fcf9a")} onClick={()=>this.props.history.push('/stock')}>SIGN UP</div>
+                      <h3>{this.state.userName}</h3>
                   </Nav>
               </Navbar>
               
