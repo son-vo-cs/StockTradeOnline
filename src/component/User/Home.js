@@ -3,7 +3,8 @@ import logo from "./logo1.png"
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import './Home.scss'
 import { style } from 'glamor';
-
+import { DropdownButton, Dropdown } from 'react-bootstrap';
+import SearchBar from '../Stock/SearchBar'
 
 class Home extends Component
 {
@@ -18,6 +19,7 @@ class Home extends Component
         userName: "Son",
         userStatus: 'Login',
         open: false,
+        data: {"Michael": "Mi ly", "MSFT": "Microsoft Inc", "MA": "Mama"},
     };
 
     handleOpen = () =>
@@ -58,10 +60,12 @@ class Home extends Component
           <div>
               
               <Navbar>
-                  <img className="rounded mx-auto d-block logo" src={logo} width="35" alt="Casual Jacket"/>
+                <img src={logo} width="30" alt="Casual Jacket"/>
+                <h1>haha</h1>
                   <Nav className="ml-auto" style={{width:"30%"}} >
+                  
                       {/* <Nav.Link {...this.hoverStyle("#218a67","white","white","#218a67")} onClick={this.handleOpen}>{this.state.userStatus}</Nav.Link> */}
-                      <h3>{this.state.userName}</h3>
+                      <div className="user-name">{this.state.userName}</div>
                   </Nav>
               </Navbar>
               
