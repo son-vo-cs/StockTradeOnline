@@ -31,6 +31,7 @@ function App() {
             <Route exact path='/deposit' component={Deposit}/>
             <Route exact path='/withdraw' component={WithDraw}/>
             <Route exact path='/home' component={Home}/>
+            
         </Switch>
     </BrowserRouter>
 </React.Fragment>
