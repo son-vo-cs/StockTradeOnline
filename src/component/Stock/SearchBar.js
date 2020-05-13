@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './SearchBar.scss'
 import { DropdownButton, Dropdown } from 'react-bootstrap';
-
+// import { Select } from 'react-select'
 // import "./Buy.scss";
 class SearchBar extends React.Component  {
 
@@ -51,14 +51,25 @@ class SearchBar extends React.Component  {
                         // {return this.state.typedText.length>=1 && (key.includes(this.state.typedText) || val.includes(this.state.typedText) )} )
                         // .map( ([key,val]) => <h1>{key}</h1> )
                         // filterSearch(this.state.data, this.state.typedText).map(([key,val]) => <h1>{key}</h1>)
-                        <DropdownButton  id="dropdown-menu">
-                        {filterSearch(this.state.data, this.state.typedText).map( key =>
-                            <div> <Dropdown.Item id="dropdown-item" className="itemSearch">{key}<br/>{this.state.data[key]}</Dropdown.Item></div>)}
-                            </DropdownButton>
+                        <div className="over-flow">
+                       {
+                        filterSearch(this.state.data, this.state.typedText).map( key =>
+                            <div> <h1 className="itemSearch">{key}<br/>{this.state.data[key]}</h1></div>)
+                        }
+                        </div>
+                    
                     }
                     <div>hahsdh</div>
                     <h1>sahdjashjdhasjhdja</h1>
-                    
+                    <div>
+  {/* <Select
+    // value={selectedOption}
+    options={this.state.data}
+    onChange={this.handleChange}
+    placeholder= "Search..."
+    openMenuOnClick={false}
+  /> */}
+ </div>
                     <h1>sahdjashjdhasjhdja</h1>
                 {/* <h1 className="itemSearch">tustutu<br/>haha</h1> */}
             </div>

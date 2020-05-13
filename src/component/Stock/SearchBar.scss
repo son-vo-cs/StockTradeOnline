@@ -15,7 +15,16 @@
     justify-content: center;
     // animation: blinker 1s cubic-bezier(0.5, 0, 1, 1) infinite alternate;
     // position: absolute;
+    // z-index: 9;
+    // margin: 20px;
+    margin-bottom: 10px;
 }
+
+.over-flow
+{
+    overflow-y: auto;
+}
+
 .itemSearch:hover,
 .close:focus {
     background: hsl(186, 69%, 85%);
