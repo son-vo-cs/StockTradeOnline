@@ -4,6 +4,7 @@ import React, {Component} from 'react';
 import Stock from './Stock'
 import {Line} from 'react-chartjs-2';
 import SearchBar from './SearchBar'
+import Home from '../User/Home'
 
 const data = {
   labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
@@ -39,7 +40,8 @@ class Test extends Component
           //   <Stock option={option}></Stock>
           // </div>
           <div>
-            <SearchBar argument={aa}></SearchBar>
+            {/* <SearchBar argument={aa}></SearchBar> */}
+          <Home></Home>
           </div>
         );
       }

@@ -38,7 +38,14 @@ class Stock extends Component
     componentDidMount(){
         if (this.props.option.symbol.length < 1)
         {
-            
+            var data = setData(this.props.option.prices,this.props.option.dates,"");
+            this.setState(
+                {
+                    data:data,
+                    displayDay:-1,
+                    temp:this.props.option.symbol
+                }
+            );
         }
         else
         {

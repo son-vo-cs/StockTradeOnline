@@ -5,25 +5,27 @@ import './Home.scss'
 import { style } from 'glamor';
 import { DropdownButton, Dropdown } from 'react-bootstrap';
 import SearchBar from '../Stock/SearchBar'
+import Stock from '../Stock/Stock'
 
 class Home extends Component
 {
     constructor(props) {
         super(props);
         this.hoverStyle = this.hoverStyle.bind(this);
+        this.state =
+        {
+            userName: "Son",
+            userStatus: 'Login',
+            open: false,
+            data: {"Michael": "Mi ly", "MSFT": "Microsoft Inc", "MA": "Mama"},
+            account:{},
+            stock:{}
+        };
+
 
     }
 
-    state =
-    {
-        userName: "Son",
-        userStatus: 'Login',
-        open: false,
-        data: {"Michael": "Mi ly", "MSFT": "Microsoft Inc", "MA": "Mama"},
-        account:null,
-        stock: null
-    };
-
+    
     componentDidMount()
     {
         var account = 
@@ -40,7 +42,7 @@ class Home extends Component
 
         var stock = 
         {
-            symbol: "SPY",
+            symbol: ".",
             showButs: false,
             showTitle: true,
             prices: [1,2,3],
@@ -87,7 +89,19 @@ class Home extends Component
             width: '50%',
             textAlign:"center",
             alignItems: 'center',borderRadius: 5,backgroundColor: "#aaaaaa",color:"red",transition: "all ease .5s", ":hover": { cursor: "pointer",textDecorationLine: 'underline', backgroundColor: "#ffff9b", color: "green" } });
+        
 
+            var option = 
+            {
+              symbol: "",
+              showButs: false,
+              showTitle: true,
+              prices: [1,2,3],
+              dates: ['2011','2012','2013'],
+              width: 600,
+              height: 300,
+              size: 'small'
+            }
         return(
           <div>
               
@@ -113,7 +127,8 @@ class Home extends Component
                     <div className="home-container">
                         <div className="text-container">
                             <p className="stocktrade">Investing</p>
-                            
+                            {/* <Stock option={this.state.stock}></Stock> */}
+                            <p>{this.state.stock.symbol}</p>
                         </div>
 
                     </div>
