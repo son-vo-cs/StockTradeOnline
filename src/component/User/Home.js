@@ -15,6 +15,7 @@ class Home extends Component
 
     state =
     {
+        userName: "Son",
         userStatus: 'Login',
         open: false,
     };
