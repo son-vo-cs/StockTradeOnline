@@ -61,15 +61,17 @@ class Home extends Component
               
               <Navbar>
                   
-                  <h1>first</h1>
                 <img src={logo} width="30" alt="Casual Jacket"/>
-                <h1>second</h1>
                 <SearchBar style={{position:"fixed"}} argument={this.state}></SearchBar>
-                <h1>third</h1>
                   <Nav className="ml-auto" style={{width:"30%"}} >
                   
                       {/* <Nav.Link {...this.hoverStyle("#218a67","white","white","#218a67")} onClick={this.handleOpen}>{this.state.userStatus}</Nav.Link> */}
                       <div className="user-name">{this.state.userName}</div>
+                      <DropdownButton id="dropdown-basic-button" title="Action">
+                        <Dropdown.Item href="#/action-1">Deposit</Dropdown.Item>
+                        <Dropdown.Item href="#/action-2">Withdraw</Dropdown.Item>
+                    </DropdownButton>
+                    <div className="user-name">Log out</div>
                   </Nav>
               </Navbar>
               
@@ -78,14 +80,8 @@ class Home extends Component
                 <div className="home-wrapper">
                     <div className="home-container">
                         <div className="text-container">
-                            <p className="stocktrade">StockTrade</p>
-                            <p className="intro"> Free stock trading.
-                            <br/>Stop paying comission fee for <br/> every trade<br/>
-                            </p>
-                            <p className="sub-intro">Start right now with StockTrade.<br/>
-                            It takes less than 5 minitues for signing up!
-
-                            </p>
+                            <p className="stocktrade">Investing</p>
+                            
                         </div>
 
                     </div>

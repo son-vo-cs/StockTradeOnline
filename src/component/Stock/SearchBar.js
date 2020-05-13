@@ -3,6 +3,8 @@ import './SearchBar.scss'
 import { DropdownButton, Dropdown } from 'react-bootstrap';
 // import { Select } from 'react-select'
 // import "./Buy.scss";
+import ReactSearchBox from 'react-search-box'
+
 class SearchBar extends React.Component  {
 
     constructor(props)
@@ -16,7 +18,29 @@ class SearchBar extends React.Component  {
                 "MSFT": "Microsoft Inc",
                 "Microsoft Inc": "MSFT",
             },
-            typedText: ""
+            typedText: "",
+            temp:[
+                {
+                  key: 'john',
+                  value: 'John Doe',
+                },
+                {
+                  key: 'jane',
+                  value: 'Jane Doe',
+                },
+                {
+                  key: 'mary',
+                  value: 'Mary Phillips',
+                },
+                {
+                  key: 'robert',
+                  value: 'Robert',
+                },
+                {
+                  key: 'karius',
+                  value: 'Karius',
+                },
+              ]
         }
     }
     componentDidMount(){
@@ -59,20 +83,7 @@ class SearchBar extends React.Component  {
                         </div>
                     
                     }
-                    <div>hahsdh</div>
-                    <h1>sahdjashjdhasjhdja</h1>
-                    <div>
-  {/* <Select
-    // value={selectedOption}
-    options={this.state.data}
-    onChange={this.handleChange}
-    placeholder= "Search..."
-    openMenuOnClick={false}
-  /> */}
- </div>
-                    <h1>sahdjashjdhasjhdja</h1>
-                {/* <h1 className="itemSearch">tustutu<br/>haha</h1> */}
-            </div>
+                  </div>
 
 
         );}
