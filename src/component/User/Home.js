@@ -60,8 +60,12 @@ class Home extends Component
           <div>
               
               <Navbar>
+                  
+                  <h1>first</h1>
                 <img src={logo} width="30" alt="Casual Jacket"/>
-                <h1>haha</h1>
+                <h1>second</h1>
+                <SearchBar style={{position:"fixed"}} argument={this.state}></SearchBar>
+                <h1>third</h1>
                   <Nav className="ml-auto" style={{width:"30%"}} >
                   
                       {/* <Nav.Link {...this.hoverStyle("#218a67","white","white","#218a67")} onClick={this.handleOpen}>{this.state.userStatus}</Nav.Link> */}

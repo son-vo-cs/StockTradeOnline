@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import './SearchBar.scss'
+import { DropdownButton, Dropdown } from 'react-bootstrap';
+
 // import "./Buy.scss";
 class SearchBar extends React.Component  {
 
@@ -43,14 +45,21 @@ class SearchBar extends React.Component  {
             <div>
                 {/* <label htmlFor="Search"> search me</label> */}
                 
-                <input type="text" value={this.state.typedText} onChange={this.handleChange} className="searchBar"></input>
+                <input type="text" value={this.state.typedText} placeholder="Search for Stocks" onChange={this.handleChange} className="searchBar"></input>
                     {
                         // Object.entries(this.state.data).filter( ([key,val]) => 
                         // {return this.state.typedText.length>=1 && (key.includes(this.state.typedText) || val.includes(this.state.typedText) )} )
                         // .map( ([key,val]) => <h1>{key}</h1> )
                         // filterSearch(this.state.data, this.state.typedText).map(([key,val]) => <h1>{key}</h1>)
-                        filterSearch(this.state.data, this.state.typedText).map( key => <h1 className="itemSearch">{key}<br/>{this.state.data[key]}</h1>)
+                        <DropdownButton  id="dropdown-menu">
+                        {filterSearch(this.state.data, this.state.typedText).map( key =>
+                            <div> <Dropdown.Item id="dropdown-item" className="itemSearch">{key}<br/>{this.state.data[key]}</Dropdown.Item></div>)}
+                            </DropdownButton>
                     }
+                    <div>hahsdh</div>
+                    <h1>sahdjashjdhasjhdja</h1>
+                    
+                    <h1>sahdjashjdhasjhdja</h1>
                 {/* <h1 className="itemSearch">tustutu<br/>haha</h1> */}
             </div>
 
