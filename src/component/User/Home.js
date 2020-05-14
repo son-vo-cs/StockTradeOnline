@@ -18,42 +18,29 @@ class Home extends Component
             userStatus: 'Login',
             open: false,
             data: {"Michael": "Mi ly", "MSFT": "Microsoft Inc", "MA": "Mama"},
-            account:{},
-            stock:{}
+            account:{symbol: "SPY",
+            showButs: false,
+            showTitle: true,
+            prices: [1,2,3],
+            dates: ['2011','2012','2013'],
+            width: 600,
+            height: 300,
+            size: 'small'},
+            stock:{symbol: ".",
+            showButs: false,
+            showTitle: true,
+            prices: [1,2,3],
+            dates: ['2011','2012','2013'],
+            width: 600,
+            height: 300,
+            size: 'small'}
         };
 
 
     }
 
     
-    componentDidMount()
-    {
-        var account = 
-        {
-            symbol: "SPY",
-            showButs: false,
-            showTitle: true,
-            prices: [1,2,3],
-            dates: ['2011','2012','2013'],
-            width: 600,
-            height: 300,
-            size: 'small'
-        }
-
-        var stock = 
-        {
-            symbol: ".",
-            showButs: false,
-            showTitle: true,
-            prices: [1,2,3],
-            dates: ['2011','2012','2013'],
-            width: 600,
-            height: 300,
-            size: 'small'
-        }
-
-        this.setState({account:account, stock:stock});
-    }
+    
 
 
     handleOpen = () =>
@@ -124,14 +111,15 @@ class Home extends Component
               {/* <h1 className="ml-auto" style={{width:"76%"}}>Stock Trade</h1>  */}
                 
                 <div className="home-wrapper">
-                    <div className="home-container">
-                        <div className="text-container">
-                            <p className="stocktrade">Investing</p>
-                            {/* <Stock option={this.state.stock}></Stock> */}
-                            <p>{this.state.stock.symbol}</p>
-                        </div>
-
+                    <div>
+                        <p className="stocktrade">Investing</p>
+                        <Stock option={this.state.account}></Stock>
                     </div>
+                
+                </div>
+                <div>    
+                        <p>ASDAS</p>    
+                        <Stock option={option}></Stock>
                 </div>
           </div>
 

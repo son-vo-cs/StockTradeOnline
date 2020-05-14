@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './SearchBar.scss'
 import { DropdownButton, Dropdown } from 'react-bootstrap';
-// import { Select } from 'react-select'
+import { Select } from 'react-select'
 // import "./Buy.scss";
 import ReactSearchBox from 'react-search-box'
 
@@ -19,28 +19,7 @@ class SearchBar extends React.Component  {
                 "Microsoft Inc": "MSFT",
             },
             typedText: "",
-            temp:[
-                {
-                  key: 'john',
-                  value: 'John Doe',
-                },
-                {
-                  key: 'jane',
-                  value: 'Jane Doe',
-                },
-                {
-                  key: 'mary',
-                  value: 'Mary Phillips',
-                },
-                {
-                  key: 'robert',
-                  value: 'Robert',
-                },
-                {
-                  key: 'karius',
-                  value: 'Karius',
-                },
-              ]
+            
         }
     }
     componentDidMount(){
@@ -83,7 +62,9 @@ class SearchBar extends React.Component  {
                         </div>
                     
                     }
-                  </div>
+
+
+            </div>
 
 
         );}
