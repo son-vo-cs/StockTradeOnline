@@ -19,6 +19,8 @@ class Home extends Component
             userStatus: 'Login',
             open: false,
             data: {"Michael": "Mi ly", "MSFT": "Microsoft Inc", "MA": "Mama"},
+            fund: 100,
+            ownStock: ["SPY","AAPL"],
             account:
                 {symbol: "SPY",
                 showButs: false,
@@ -113,20 +115,23 @@ class Home extends Component
               </Navbar>
               
               {/* <h1 className="ml-auto" style={{width:"76%"}}>Stock Trade</h1>  */}
-                
-                <div className="home-wrapper">
-                    <div>
-                        <p className="stocktrade">Investing</p>
-                        <Stock option={this.state.account}></Stock>
+                <div>
+                    <div className="home-wrapper">
+                        <div>
+                            <p className="stocktrade">Investing</p>
+                            <Stock option={this.state.account}></Stock>
+                        </div>
+                        
                     </div>
-                    
-                </div>
-                <div className="small-graph" onClick={alert("haha")}>
-                    <Row>
-                        <h1 className="first-col">Title</h1>
-                        <div className="second-col"><Stock option={getOptionGraph("",false,undefined,undefined,undefined,600,300,'small')}></Stock></div>
-                    </Row>
-                       
+                    <hr></hr>
+                    <div className="small-graph" onClick={(e)=> alert("haha")}>
+                        <Row>
+
+                            <h1 className="first-col">Title</h1>
+                            <div className="second-col"><Stock option={getOptionGraph("",false,undefined,undefined,undefined,600,300,'small')}></Stock></div>
+                        </Row>
+                    </div>
+                    <hr></hr>
                 </div>
           </div>
 
