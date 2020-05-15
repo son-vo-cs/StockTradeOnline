@@ -29,7 +29,7 @@ class Home extends Component
                 size: 'small'},
 
             stock:
-                {symbol: ".",
+                {symbol: "",
                 showButs: false,
                 showTitle: true,
                 prices: [1,2,3],
@@ -118,11 +118,11 @@ class Home extends Component
                         <p className="stocktrade">Investing</p>
                         <Stock option={this.state.account}></Stock>
                     </div>
-                
+                    
+                    <p>ASDAS</p>    
+                        <Stock option={this.state.stock}></Stock>
                 </div>
                 <div>    
-                        <p>ASDAS</p>    
-                        <Stock option={option}></Stock>
                 </div>
           </div>
 
