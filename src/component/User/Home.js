@@ -6,6 +6,7 @@ import { style } from 'glamor';
 import { DropdownButton, Dropdown } from 'react-bootstrap';
 import SearchBar from '../Stock/SearchBar'
 import Stock from '../Stock/Stock'
+import { Container, Row, Col } from 'reactstrap';
 
 class Home extends Component
 {
@@ -113,17 +114,21 @@ class Home extends Component
               
               {/* <h1 className="ml-auto" style={{width:"76%"}}>Stock Trade</h1>  */}
                 
-                <div className="home-wrapper">
-                    <div>
+                <div>
+                    <Row>
                         <p className="stocktrade">Investing</p>
                         <Stock option={this.state.account}></Stock>
-                    </div>
-                    
-                    <p>ASDAS</p>    
-                        <Stock option={this.state.stock}></Stock>
+                    </Row>
+                    <Row>
+                    <Col>Title</Col>
+                    <Col><Stock option={this.state.stock}></Stock></Col>   
+                </Row>
                 </div>
-                <div>    
-                </div>
+                
+                {/* <div className="small-graph">
+                    <h1>Title</h1>
+                    <Stock option={this.state.stock}></Stock>   
+                </div> */}
           </div>
 
         );
