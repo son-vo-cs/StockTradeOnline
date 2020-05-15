@@ -27,7 +27,7 @@ class Home extends Component
                 dates: ['2011','2012','2013'],
                 width: 600,
                 height: 300,
-                size: 'small'},
+                size: 'med'},
 
             stock:
                 {symbol: "",
@@ -121,9 +121,12 @@ class Home extends Component
                     </div>
                     
                 </div>
-                <div className="small-graph">
-                    <h1>Title</h1>
-                    <Stock option={this.state.stock}></Stock>   
+                <div className="small-graph" onClick={alert("haha")}>
+                    <Row>
+                        <h1 className="first-col">Title</h1>
+                        <div className="second-col"><Stock option={getOptionGraph("",false,undefined,undefined,undefined,600,300,'small')}></Stock></div>
+                    </Row>
+                       
                 </div>
           </div>
 
