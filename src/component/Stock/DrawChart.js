@@ -86,7 +86,7 @@ class DrawChart extends Component
         switch(size)
         {
             case 'small':
-                return [width*3/7,height*2/7];
+                return [width*3/8,height*2/7];
             default:
                 return [width/2,height/3];
         }

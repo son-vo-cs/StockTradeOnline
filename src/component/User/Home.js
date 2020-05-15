@@ -114,25 +114,46 @@ class Home extends Component
               
               {/* <h1 className="ml-auto" style={{width:"76%"}}>Stock Trade</h1>  */}
                 
-                <div>
-                    <Row>
+                <div className="home-wrapper">
+                    <div>
                         <p className="stocktrade">Investing</p>
                         <Stock option={this.state.account}></Stock>
-                    </Row>
-                    <Row>
-                    <Col>Title</Col>
-                    <Col><Stock option={this.state.stock}></Stock></Col>   
-                </Row>
+                    </div>
+                    
                 </div>
-                
-                {/* <div className="small-graph">
+                <div className="small-graph">
                     <h1>Title</h1>
                     <Stock option={this.state.stock}></Stock>   
-                </div> */}
+                </div>
           </div>
 
         );
     }
+}
+
+function getOptionGraph( 
+      symbol = "",
+      showButs = false,
+      showTitle = true,
+      prices = [1,2,3],
+      dates = ['2011','2012','2013'],
+      width = 600,
+      height =  300,
+      size=  'small'
+    )
+{
+    var option = 
+    {
+      symbol: symbol,
+      showButs: showButs,
+      showTitle: showTitle,
+      prices: prices,
+      dates: dates,
+      width: width,
+      height: height,
+      size: size
+    }
+    return option
 }
 
 
