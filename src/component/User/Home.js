@@ -18,22 +18,25 @@ class Home extends Component
             userStatus: 'Login',
             open: false,
             data: {"Michael": "Mi ly", "MSFT": "Microsoft Inc", "MA": "Mama"},
-            account:{symbol: "SPY",
-            showButs: false,
-            showTitle: true,
-            prices: [1,2,3],
-            dates: ['2011','2012','2013'],
-            width: 600,
-            height: 300,
-            size: 'small'},
-            stock:{symbol: ".",
-            showButs: false,
-            showTitle: true,
-            prices: [1,2,3],
-            dates: ['2011','2012','2013'],
-            width: 600,
-            height: 300,
-            size: 'small'}
+            account:
+                {symbol: "SPY",
+                showButs: false,
+                showTitle: true,
+                prices: [1,2,3],
+                dates: ['2011','2012','2013'],
+                width: 600,
+                height: 300,
+                size: 'small'},
+
+            stock:
+                {symbol: ".",
+                showButs: false,
+                showTitle: true,
+                prices: [1,2,3],
+                dates: ['2011','2012','2013'],
+                width: 600,
+                height: 300,
+                size: 'small'}
         };
 
 

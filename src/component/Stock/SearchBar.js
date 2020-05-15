@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './SearchBar.scss'
 import { DropdownButton, Dropdown } from 'react-bootstrap';
-import { Select } from 'react-select'
+import Select from 'react-select'
 // import "./Buy.scss";
 import ReactSearchBox from 'react-search-box'
 
@@ -41,13 +41,33 @@ class SearchBar extends React.Component  {
 
     handleChange = (event) => {
         this.setState({typedText: event.target.value});
+        alert(event)
 
     };
+
+    handleDrop = selectOption =>
+    {
+        alert(selectOption.value)
+    }
+
     render(){
+        
+const options = [
+    { label: 'B' },
+    { label: 'AB' },
+    { label: 'AA' },
+  ];
         return (
             <div>
                 {/* <label htmlFor="Search"> search me</label> */}
                 
+                <Select
+        value={null}
+        onChange={this.handleDrop}
+        options={options}
+        openMenuOnClick={false}
+        hideSelectedOptions={false}
+      />
                 <input type="text" value={this.state.typedText} placeholder="Search for Stocks" onChange={this.handleChange} className="searchBar"></input>
                     {
                         // Object.entries(this.state.data).filter( ([key,val]) => 
@@ -58,6 +78,9 @@ class SearchBar extends React.Component  {
                        {
                         filterSearch(this.state.data, this.state.typedText).map( key =>
                             <div> <h1 className="itemSearch">{key}<br/>{this.state.data[key]}</h1></div>)
+
+
+                            
                         }
                         </div>
                     
