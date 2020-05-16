@@ -30,7 +30,7 @@ class Home extends Component
                 width: 600,
                 height: 300,
                 size: 'med'},
-
+// 
             stock:
                 {symbol: "",
                 showButs: false,
@@ -123,15 +123,19 @@ class Home extends Component
                         </div>
                         
                     </div>
-                    <hr></hr>
-                    <div className="small-graph" onClick={(e)=> alert("haha")}>
-                        <Row>
 
-                            <h1 className="first-col">Title</h1>
-                            <div className="second-col"><Stock option={getOptionGraph("",false,undefined,undefined,undefined,600,300,'small')}></Stock></div>
-                        </Row>
-                    </div>
-                    <hr></hr>
+                    {this.state.ownStock.map( (stock) =>  <div>
+                        <hr></hr>
+                        <div className="small-graph" onClick={(e)=> alert("haha")}>
+                            <Row>
+
+                                <h1 className="first-col">Title</h1>
+                                <div className="second-col"><Stock option={getOptionGraph(stock,false,undefined,undefined,undefined,600,300,'small')}></Stock></div>
+                            </Row>
+                        </div>
+                        <hr></hr>
+                    </div>)}
+                    
                 </div>
           </div>
 
