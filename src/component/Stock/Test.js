@@ -35,10 +35,13 @@ class Test extends Component
         size: 'small',
         
         showPerformance: true,
-
-        action: [3,-1,-1,+1],
-        hisDates:['2011','2013','2014','2015'],
-        priceHis: [213,210,208,230],
+        history:
+        {
+          action: [3,-1,-1,+1],
+          hisDates:['2011','2013','2014','2015'],
+          priceHis: [213,210,208,230]
+        },
+        
 
 
         showAccount: true,
