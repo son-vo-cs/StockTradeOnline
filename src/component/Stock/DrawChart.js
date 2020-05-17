@@ -19,6 +19,8 @@ class DrawChart extends Component
                     borderColor: 'rgb(255, 99, 132)',
                     borderWidth: 2,
                     data: [65, 59, 80, 81, 56],
+                    priceBuy:0,
+                    changes:0,
                     
                     
                 }
@@ -26,6 +28,13 @@ class DrawChart extends Component
             temp: null
         };
         this.getTableSize = this.getTableSize.bind(this);
+        this.calculatePerform = this.calculatePerform.bind(this);
+
+    }
+
+    calculatePerform(history)
+    {
+        var orderHistory = history.sort((a,b)=> a.hisDate > b.hisDate ? 1 : b.hisDate > a.hisDate ? -1 : 0);
     }
 
     setView(days, tempData)
@@ -169,12 +178,21 @@ class DrawChart extends Component
                     </button>
                 </div>
 
+                <div style={{display: (this.props.option.showPerformance === true? "block" : "none")}}>
+                    {
+                        this.calculatePerform(this.props.option.history)
+                    }
+                </div>
+
+
+
+                
+
             </div>
         );
     }
 
 };
-
 
 
 export default withWindowSizeListener(DrawChart)

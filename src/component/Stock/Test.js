@@ -36,11 +36,29 @@ class Test extends Component
         
         showPerformance: true,
         history:
-        {
-          action: [3,-1,-1,+1],
-          hisDates:['2011','2013','2014','2015'],
-          priceHis: [213,210,208,230]
-        },
+        [
+          {
+            action:3,
+            hisDate: '2011',
+            price: 213,
+          },
+          {
+            action:-1,
+            hisDate: '2013',
+            price: 210,
+          },
+          {
+            action:-1,
+            hisDate: '2014',
+            price: 208,
+          },
+          {
+            action:1,
+            hisDate: '2015',
+            price: 230,
+          },
+
+        ],
         
 
 
