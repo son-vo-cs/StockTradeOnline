@@ -25,9 +25,11 @@ class DrawChart extends Component
                     
                 }
             ],
-            priceBuy:perform.priceBuy,
-            changes:perform.changes,
-            currentPrice: perform.currentPrice,
+            priceBuy:perform.priceBuy.toFixed(2),
+            changes:perform.changes.toFixed(2),
+            currentPrice: perform.currentPrice.toFixed(2),
+            shares: perform.shares,
+            value: (perform.shares*perform.currentPrice).toFixed(2),
             temp: null
         };
         this.getTableSize = this.getTableSize.bind(this);
@@ -181,7 +183,9 @@ class DrawChart extends Component
                 <div style={{display: (this.props.option.showPerformance === true? "block" : "none")}}>
                     <h1>Price Buy: {this.state.priceBuy}</h1>
                     <h1>Current Price: {this.state.currentPrice}</h1>
-                    <h1>Changes: {this.state.changes}</h1>
+                    <h1 className={this.state.changes >= 0 ? "profit" : "lost"}>Changes: {this.state.changes} %</h1>
+                    <h1>Shares: {this.state.shares}</h1>
+                    <h1>Total Value: {this.state.value}</h1>
                 </div>
 
 
@@ -216,7 +220,8 @@ function calculatePerform(option)
     var perform = {
         priceBuy: priceBuy,
         changes:changes,
-        currentPrice: orderHistory[orderHistory.length-1].price
+        currentPrice: orderHistory[orderHistory.length-1].price,
+        shares: shares
     };
     return perform;
 

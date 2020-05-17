@@ -42,11 +42,7 @@ class Test extends Component
             hisDate: '2011',
             price: 213,
           },
-          {
-            action:-1,
-            hisDate: '2013',
-            price: 210,
-          },
+          
           {
             action:-1,
             hisDate: '2014',
@@ -56,6 +52,10 @@ class Test extends Component
             action:1,
             hisDate: '2015',
             price: 230,
+          },{
+            action:-1,
+            hisDate: '2013',
+            price: 210,
           },
 
         ],
