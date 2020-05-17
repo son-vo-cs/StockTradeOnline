@@ -2,13 +2,14 @@ import React, { Component } from 'react'
 
 import {Line} from 'react-chartjs-2';
 import { withWindowSizeListener } from 'react-window-size-listener';
-
+import './DrawChart.scss'
 
 class DrawChart extends Component
 {
     constructor(props)
     {
         super(props);
+        var perform = calculatePerform(props.option);
         this.state = {
             datasets: [
                 {
@@ -19,23 +20,22 @@ class DrawChart extends Component
                     borderColor: 'rgb(255, 99, 132)',
                     borderWidth: 2,
                     data: [65, 59, 80, 81, 56],
-                    priceBuy:0,
-                    changes:0,
+                    
                     
                     
                 }
             ],
+            priceBuy:perform.priceBuy,
+            changes:perform.changes,
+            currentPrice: perform.currentPrice,
             temp: null
         };
         this.getTableSize = this.getTableSize.bind(this);
-        this.calculatePerform = this.calculatePerform.bind(this);
+        // this.calculatePerform = this.calculatePerform.bind(this);
 
     }
 
-    calculatePerform(history)
-    {
-        var orderHistory = history.sort((a,b)=> a.hisDate > b.hisDate ? 1 : b.hisDate > a.hisDate ? -1 : 0);
-    }
+    
 
     setView(days, tempData)
     {
@@ -179,9 +179,9 @@ class DrawChart extends Component
                 </div>
 
                 <div style={{display: (this.props.option.showPerformance === true? "block" : "none")}}>
-                    {
-                        this.calculatePerform(this.props.option.history)
-                    }
+                    <h1>Price Buy: {this.state.priceBuy}</h1>
+                    <h1>Current Price: {this.state.currentPrice}</h1>
+                    <h1>Changes: {this.state.changes}</h1>
                 </div>
 
 
@@ -193,6 +193,34 @@ class DrawChart extends Component
     }
 
 };
+
+
+function calculatePerform(option)
+{
+    if (option.showPerformance === false)
+    {
+        return {
+            priceBuy: 0,
+            changes:0
+        }
+    }
+    var orderHistory = option.history.sort((a,b)=> a.hisDate > b.hisDate ? 1 : b.hisDate > a.hisDate ? -1 : 0);
+    var price = 0.0;
+    var shares = 0.0;
+    orderHistory.forEach(element => {
+        price += (element.price*element.action);
+        shares += element.action;
+    });
+    var priceBuy = price/shares;
+    var changes = (priceBuy-orderHistory[0].price) * 100.0 / orderHistory[0].price;
+    var perform = {
+        priceBuy: priceBuy,
+        changes:changes,
+        currentPrice: orderHistory[orderHistory.length-1].price
+    };
+    return perform;
+
+}
 
 
 export default withWindowSizeListener(DrawChart)
