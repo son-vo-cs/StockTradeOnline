@@ -30,7 +30,7 @@ class Home extends Component
                 width: 600,
                 height: 300,
                 size: 'med'},
-// 
+
             stock:
                 {symbol: "",
                 showButs: false,

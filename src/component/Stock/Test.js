@@ -26,7 +26,7 @@ class Test extends Component
       var option = 
       {
         symbol: "SPY",
-        showButs: false,
+        showButs: true,
         showTitle: true,
         prices: [1,2,3],
         dates: ['2011','2012','2013'],
