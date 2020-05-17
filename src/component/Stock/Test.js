@@ -28,11 +28,24 @@ class Test extends Component
         symbol: "SPY",
         showButs: true,
         showTitle: true,
-        prices: [1,2,3],
-        dates: ['2011','2012','2013'],
+        prices: [1,2,3,4,5],
+        dates: ['2011','2012','2013','2014','2015'],
         width: 600,
         height: 300,
-        size: 'small'
+        size: 'small',
+        
+        showPerformance: true,
+        action: [3,-1,-2,+1],
+        hisDates:['2011','2013','2014','2015'],
+        priceHis: [213,210,208,230],
+
+
+        showAccount: true,
+        fund: 1500,
+        ownStock: ["SPY"]
+
+
+        
       }
       
       var aa = {list: ["a","b","c"], data: {"Michael": "Mi ly", "MSFT": "Microsoft Inc", "MA": "Mama"}};
