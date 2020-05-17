@@ -47,6 +47,7 @@ class SearchBar extends React.Component  {
 
     handleDrop = selectOption =>
     {
+        alert(selectOption)
         alert(selectOption.value)
     }
 
@@ -83,6 +84,7 @@ const options = [
                             
                         }
                         </div>
+                        
                     
                     }
 

@@ -35,7 +35,8 @@ class Test extends Component
         size: 'small',
         
         showPerformance: true,
-        action: [3,-1,-2,+1],
+
+        action: [3,-1,-1,+1],
         hisDates:['2011','2013','2014','2015'],
         priceHis: [213,210,208,230],
 
@@ -56,7 +57,7 @@ class Test extends Component
           // <div>
             // <SearchBar argument={aa}></SearchBar>
           // {/* <Home></Home> */}
-          // {/* </div> */}
+          // </div>
         );
       }
     
