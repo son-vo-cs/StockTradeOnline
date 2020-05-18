@@ -214,6 +214,21 @@ function addDate(dateString, num)
 }
 
 
+function getSizeDate(date1, date2)
+{
+    var diff = getDiff(date1, date2);
+    return diff <= 99 ? "compact" : "full";
+}
+
+function getDiff(date1, date2)
+{
+    var time1 = new Date(date1.getTime());
+    var time2 = new Date(date2.getTime());
+    var diff = Math.abs(tim1-time2)*1.0;
+    return Math.ceil(diffTime / (1000 * 60 * 60 * 24)
+}
+
+
 function calculatePerform(option)
 {
     if (option.showPerformance === false)
