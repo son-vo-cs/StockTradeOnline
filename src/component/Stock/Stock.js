@@ -44,6 +44,8 @@ class Stock extends Component
 
             var url = getUrl(size, this.props.option.symbol);
             
+
+
             var data = setData(this.props.option.prices,this.props.option.dates,"");
             this.setState(
                 {
@@ -110,12 +112,20 @@ function getPriceDate(contents, specific)
     dataJSON = dataJSON['Time Series (Daily)'];
     var keys = Object.keys(dataJSON);
     var limit = 500;
-    for (var i = Math.min(keys.length-1,limit); i >= 0; i--)
+    if (specific.length > 1)
     {
-        prices.push(dataJSON[keys[i]]['4. close']);
-        dates.push(keys[i]);
-        
+
     }
+    else
+    {
+        for (var i = Math.min(keys.length-1,limit); i >= 0; i--)
+        {
+            prices.push(dataJSON[keys[i]]['4. close']);
+            dates.push(keys[i]);
+            
+        }
+    }
+    
     var result = {
         prices: prices,
         dates: dates
