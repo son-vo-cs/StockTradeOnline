@@ -51,7 +51,7 @@ class Stock extends Component
         else
         {
             var url = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=';
-            url += this.props.option.symbol + '&apikey=Z246PXB1COOHZ4VD';
+            url += this.props.option.symbol + '&outputsize=full&apikey=Z246PXB1COOHZ4VD';
             fetch(url)
             .then(function(response) {
                 return response.json();
@@ -97,8 +97,7 @@ function setData(prices,dates, title)
     return data;   
 }
 
-
-function convertData(contents, title)
+function getPriceDate(contents)
 {
     var prices = [];
     var dates = [];
@@ -106,13 +105,25 @@ function convertData(contents, title)
     var dataJSON = contents;
     dataJSON = dataJSON['Time Series (Daily)'];
     var keys = Object.keys(dataJSON);
-    for (var i = keys.length-1; i >= 0; i--)
+    var limit = 500;
+    for (var i = Math.min(keys.length-1,limit); i >= 0; i--)
     {
         prices.push(dataJSON[keys[i]]['4. close']);
         dates.push(keys[i]);
+        
     }
+    var result = {
+        prices: prices,
+        dates: dates
+    }
+    return result;
+}
 
-    return setData(prices,dates, title);
+
+function convertData(contents, title)
+{
+    var priceDate = getPriceDate(contents);
+    return setData(priceDate.prices,priceDate.dates, title);
 }
 
 
