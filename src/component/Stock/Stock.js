@@ -14,7 +14,9 @@ class Stock extends Component
         this.state = {
             data : "htui al",
             displayDay: -1,
-            temp: "henhen"
+            temp: "henhen",
+            prices:[],
+            dates:[]
         };
 
     };
@@ -41,11 +43,15 @@ class Stock extends Component
         {
             var firstDate = this.props.option.dates[0];
             var size = getSizeDate(firstDate, getDate());
+            
+            
+            this.props.option.ownStock.forEach(symbol =>
+            {
+                
+            });
+
 
             var url = getUrl(size, this.props.option.symbol);
-            
-
-
             var data = setData(this.props.option.prices,this.props.option.dates,"");
             this.setState(
                 {
@@ -82,6 +88,8 @@ class Stock extends Component
 }
 
 
+
+
 function setData(prices,dates, title)
 {
     var priceweek = prices.slice(0,7);
@@ -112,20 +120,18 @@ function getPriceDate(contents, specific)
     dataJSON = dataJSON['Time Series (Daily)'];
     var keys = Object.keys(dataJSON);
     var limit = 500;
-    if (specific.length > 1)
+    var i = Math.min(keys.length-1,limit);
+    if (specific.length > 0)
     {
-
+        while (keys[i] < specific)
+            i -= 1;
     }
-    else
+    for (; i >= 0; i--)
     {
-        for (var i = Math.min(keys.length-1,limit); i >= 0; i--)
-        {
-            prices.push(dataJSON[keys[i]]['4. close']);
-            dates.push(keys[i]);
-            
-        }
+        prices.push(dataJSON[keys[i]]['4. close']);
+        dates.push(keys[i]);
+        
     }
-    
     var result = {
         prices: prices,
         dates: dates
@@ -187,8 +193,8 @@ function getSizeDate(date1, date2)
 
 function getDiff(date1, date2)
 {
-    var time1 = new Date(date1.getTime());
-    var time2 = new Date(date2.getTime());
+    var time1 = new Date(date1).getTime();
+    var time2 = new Date(date2).getTime();
     var diff = Math.abs(time1-time2)*1.0;
     return Math.ceil(diff / (1000 * 60 * 60 * 24));
 }
