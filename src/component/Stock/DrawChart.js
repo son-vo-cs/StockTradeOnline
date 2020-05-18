@@ -186,6 +186,7 @@ class DrawChart extends Component
                     <h1 className={this.state.changes >= 0 ? "profit" : "lost"}>Changes: {this.state.changes} %</h1>
                     <h1>Shares: {this.state.shares}</h1>
                     <h1>Total Value: {this.state.value}</h1>
+                    <h1>{addDate(getDate(),1)}</h1>
                 </div>
 
 
@@ -197,6 +198,20 @@ class DrawChart extends Component
     }
 
 };
+
+function getDate()
+{
+    var myDate = new Date();
+    myDate = new Date(myDate.getTime()-1000*60*60*7);
+    return myDate.toISOString().slice(0,10);
+}
+
+function addDate(dateString, num)
+{
+    var myDate = new Date(dateString);
+    myDate = new Date(myDate.getTime()+1000*60*60*24*num);
+    return myDate.toISOString().slice(0,10);
+}
 
 
 function calculatePerform(option)

@@ -72,13 +72,13 @@ class Test extends Component
       
       var aa = {list: ["a","b","c"], data: {"Michael": "Mi ly", "MSFT": "Microsoft Inc", "MA": "Mama"}};
         return (
-          // <div  style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '100vh'}}>
+
+          <div>
+          {/* // <div  style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '100vh'}}> */}
             <Stock option={option}></Stock>
-          // </div>
-          // <div>
-            // <SearchBar argument={aa}></SearchBar>
-          // {/* <Home></Home> */}
-          // </div>
+            {/* <SearchBar argument={aa}></SearchBar> */}
+            {/* <Home></Home> */}
+        </div>
         );
       }
     
