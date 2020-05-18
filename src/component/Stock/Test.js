@@ -29,7 +29,7 @@ class Test extends Component
         showButs: true,
         showTitle: true,
         prices: [1000],
-        dates: ['2020-05-18'],
+        dates: ['2020-04-18'],
         width: 600,
         height: 300,
         size: 'small',
