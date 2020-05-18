@@ -39,6 +39,7 @@ class Stock extends Component
     componentDidMount(){
         if (this.props.option.symbol.length < 1)
         {
+            var firstDate = this.props.option.dates[0];
             var data = setData(this.props.option.prices,this.props.option.dates,"");
             this.setState(
                 {
@@ -50,7 +51,8 @@ class Stock extends Component
         }
         else
         {
-            var url = getUrl('compact', this.props.option.symbol);
+            var size = this.props.option.size === 'small' ? 'compact' : 'full';
+            var url = getUrl(size, this.props.option.symbol);
             fetch(url)
             .then(function(response) {
                 return response.json();
