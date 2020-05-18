@@ -40,6 +40,10 @@ class Stock extends Component
         if (this.props.option.symbol.length < 1)
         {
             var firstDate = this.props.option.dates[0];
+            var size = getSizeDate(firstDate, getDate());
+
+            var url = getUrl(size, this.props.option.symbol);
+            
             var data = setData(this.props.option.prices,this.props.option.dates,"");
             this.setState(
                 {
@@ -76,7 +80,6 @@ class Stock extends Component
 }
 
 
-
 function setData(prices,dates, title)
 {
     var priceweek = prices.slice(0,7);
@@ -98,7 +101,7 @@ function setData(prices,dates, title)
     return data;   
 }
 
-function getPriceDate(contents)
+function getPriceDate(contents, specific)
 {
     var prices = [];
     var dates = [];
@@ -123,7 +126,7 @@ function getPriceDate(contents)
 
 function convertData(contents, title)
 {
-    var priceDate = getPriceDate(contents);
+    var priceDate = getPriceDate(contents,"");
     return setData(priceDate.prices,priceDate.dates, title);
 }
 
