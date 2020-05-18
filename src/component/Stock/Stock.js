@@ -167,7 +167,7 @@ function addDate(dateString, num)
 function getSizeDate(date1, date2)
 {
     var diff = getDiff(date1, date2);
-    return diff <= 99 ? "compact" : "full";
+    return diff <= 99 ? 'compact' : 'full';
 }
 
 function getDiff(date1, date2)
