@@ -50,8 +50,7 @@ class Stock extends Component
         }
         else
         {
-            var url = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=';
-            url += this.props.option.symbol + '&outputsize=full&apikey=Z246PXB1COOHZ4VD';
+            var url = getUrl('compact', this.props.option.symbol);
             fetch(url)
             .then(function(response) {
                 return response.json();
@@ -127,7 +126,16 @@ function convertData(contents, title)
 }
 
 
+function getUrl(size, symbol)
+{
+    var length = keys.length;
+    var url = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=';
+    url += symbol + '&outputsize=' + size + 'full&apikey=';
+    var key = keys[count];
+    count = (count+1) % length;
+    return url + key;
 
+}
 
 
 let count = 0;
@@ -139,6 +147,7 @@ let keys = [
     "36EB5YY6CTKAO2J3",
     "71OY0WFPGNE6ZGM1",
     "UHNZZO6S4448560M",
+    "Z246PXB1COOHZ4VD"
 ];
 function getDate()
 {
