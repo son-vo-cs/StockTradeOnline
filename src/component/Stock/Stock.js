@@ -116,6 +116,9 @@ function convertData(contents, title)
 }
 
 
+
+
+
 let count = 0;
 let keys = [
     "MTWK5TW2B9QWRNP7",
@@ -126,6 +129,34 @@ let keys = [
     "71OY0WFPGNE6ZGM1",
     "UHNZZO6S4448560M",
 ];
+function getDate()
+{
+    var myDate = new Date();
+    myDate = new Date(myDate.getTime()-1000*60*60*7);
+    return myDate.toISOString().slice(0,10);
+}
+
+function addDate(dateString, num)
+{
+    var myDate = new Date(dateString);
+    myDate = new Date(myDate.getTime()+1000*60*60*24*num);
+    return myDate.toISOString().slice(0,10);
+}
+
+
+function getSizeDate(date1, date2)
+{
+    var diff = getDiff(date1, date2);
+    return diff <= 99 ? "compact" : "full";
+}
+
+function getDiff(date1, date2)
+{
+    var time1 = new Date(date1.getTime());
+    var time2 = new Date(date2.getTime());
+    var diff = Math.abs(time1-time2)*1.0;
+    return Math.ceil(diff / (1000 * 60 * 60 * 24));
+}
 
 //
 // fetch('https://canvasjs.com/data/gallery/react/nifty-stock-price.json')
