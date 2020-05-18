@@ -116,6 +116,17 @@ function convertData(contents, title)
 }
 
 
+let count = 0;
+let keys = [
+    "MTWK5TW2B9QWRNP7",
+    "GFOZU551L9QMGNRM",
+    "NZ0ON2WUC1ZDD8FW",
+    "7MDO5Y5AEV8ADU52",
+    "36EB5YY6CTKAO2J3",
+    "71OY0WFPGNE6ZGM1",
+    "UHNZZO6S4448560M",
+];
+
 //
 // fetch('https://canvasjs.com/data/gallery/react/nifty-stock-price.json')
 //     .then(function(response) {
