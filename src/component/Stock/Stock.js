@@ -44,8 +44,9 @@ class Stock extends Component
     componentDidMount(){
         if (this.props.option.symbol.length < 1)
         {
-            var firstDate = this.props.option.dates[0];
-            var size = getSizeDate(firstDate, getDate());
+            var length = this.props.option.datas.length;
+            var lastDate = this.props.option.dates[length-1];
+            var size = getSizeDate(lastDate, getDate());
             
             
             // this.props.option.ownStock.forEach(symbol =>
@@ -65,7 +66,7 @@ class Stock extends Component
             //     });
             // });
 
-            if (this.props.option.dates[this.props.option.dates.length-1] < getDate())
+            if (this.props.option.dates[length-1] < getDate())
             {
                 var fetches = [];
                 this.props.option.ownStock.forEach(item =>
@@ -76,6 +77,10 @@ class Stock extends Component
                     });
                 Promise.all(fetches).then(values =>
                 {
+                    var valueTemp = [];
+                    values.forEach(item => valueTemp.push(getPriceDate(item,lastDate)));
+                    var newPrices = this.props.option.prices.slice();
+                    var newDates = this.props.option.prices.slice();
                     var tem = getPriceDate(values[0],"");
                     var tem2 = getPriceDate(values[1],"");
                     var tt = tem.prices[0].toString() + " " + tem2.prices[0].toString();  
