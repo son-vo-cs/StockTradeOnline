@@ -95,6 +95,7 @@ class Stock extends Component
                     var newData = setData(newPrices, newDates, "");
                     this.setState({
                         data: newData,
+                        temp:newPrices[1]
                     });
                 });
             }
