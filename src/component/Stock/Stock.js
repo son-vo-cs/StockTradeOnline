@@ -65,23 +65,26 @@ class Stock extends Component
             //     });
             // });
 
-            
-            var fetches = [];
-            this.props.option.ownStock.forEach(item =>
-                {
-                    fetches.push( fetch(getUrl('compact',item.symbol)).then(function(response){ 
-                        return response.json()
-               }));
-                });
-            Promise.all(fetches).then(values =>
+            if (this.props.option.dates[this.props.option.dates.length-1] < getDate())
             {
-                var tem = getPriceDate(values[0],"");
-                var tem2 = getPriceDate(values[1],"");
-                var tt = tem.prices[0].toString() + " " + tem2.prices[0].toString();  
-                this.setState({
-                    temp: tt,
+                var fetches = [];
+                this.props.option.ownStock.forEach(item =>
+                    {
+                        fetches.push( fetch(getUrl('compact',item.symbol)).then(function(response){ 
+                            return response.json()
+                   }));
+                    });
+                Promise.all(fetches).then(values =>
+                {
+                    var tem = getPriceDate(values[0],"");
+                    var tem2 = getPriceDate(values[1],"");
+                    var tt = tem.prices[0].toString() + " " + tem2.prices[0].toString();  
+                    this.setState({
+                        temp: tt,
+                    });
                 });
-            });
+            }
+            
 
 
             
