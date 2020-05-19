@@ -95,24 +95,30 @@ class Stock extends Component
 
                     }
                     var newData = setData(newPrices, newDates, "");
-                    this.setState({
+                    // this.setState({
+                    //     data: newData,
+                    //     temp:newPrices[1]
+                    // });
+                    return newData;
+                }).then(newData =>
+                    {
+                        this.setState({
                         data: newData,
-                        temp:newPrices[1]
+                    })
                     });
-                });
             }
             
 
 
             
-            // var data = setData(this.props.option.prices,this.props.option.dates,"");
-            // this.setState(
-            //     {
-            //         data:data,
-            //         displayDay:-1,
-            //         temp:this.props.option.symbol
-            //     }
-            // );
+            var data = setData(this.props.option.prices,this.props.option.dates,"");
+            this.setState(
+                {
+                    data:data,
+                    displayDay:-1,
+                    temp:this.props.option.symbol
+                }
+            );
         }
         else
         {
