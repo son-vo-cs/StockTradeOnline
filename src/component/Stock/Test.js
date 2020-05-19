@@ -64,7 +64,12 @@ class Test extends Component
 
         showAccount: true,
         fund: 1500,
-        ownStock: ["SPY"]
+        ownStock: [
+          {
+            symbol:"SPY",
+            shares:5
+          }
+          ]
 
 
         

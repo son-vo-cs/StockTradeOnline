@@ -47,11 +47,23 @@ class Stock extends Component
             
             this.props.option.ownStock.forEach(symbol =>
             {
-                
+                var url = getUrl(size, symbol);
+                fetch(url)
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(content => {
+                    var data = convertData(content, "");
+                    this.setState({
+                        data: data,
+                        displayDay: -1,
+                        temp: data.title
+                    });
+                });
             });
 
 
-            var url = getUrl(size, this.props.option.symbol);
+            
             var data = setData(this.props.option.prices,this.props.option.dates,"");
             this.setState(
                 {
@@ -88,7 +100,20 @@ class Stock extends Component
 }
 
 
-
+function getPerformStock(pricesPerform,datesPerform, pricesStock, datesStock, shares)
+{
+    var i = 0;
+    var j = 0;
+    var newPrices = [];
+    var newDates = [];
+    while (j < datesStock.length && i < pricesPerform.length)
+    {
+        if (datesPerform[i] === datesStock[j])
+        {
+            newPrices.push(pricesPerform[i]+pricesStock[j]*shares);
+        }
+    }
+}
 
 function setData(prices,dates, title)
 {
@@ -123,7 +148,7 @@ function getPriceDate(contents, specific)
     var i = Math.min(keys.length-1,limit);
     if (specific.length > 0)
     {
-        while (keys[i] < specific)
+        while (keys[i] <= specific)
             i -= 1;
     }
     for (; i >= 0; i--)
