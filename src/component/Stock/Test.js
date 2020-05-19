@@ -28,8 +28,8 @@ class Test extends Component
         symbol: "",
         showButs: true,
         showTitle: true,
-        prices: [1000],
-        dates: ['2020-04-18'],
+        prices: [1500],
+        dates: ['2020-05-08'],
         width: 600,
         height: 300,
         size: 'small',
@@ -68,7 +68,11 @@ class Test extends Component
           {
             symbol:"SPY",
             shares:5
-          }
+          },
+          {
+            symbol:"AAPL",
+            shares:2,
+          },
           ]
 
 

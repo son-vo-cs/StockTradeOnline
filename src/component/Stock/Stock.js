@@ -31,6 +31,9 @@ class Stock extends Component
                 {/* <h1>Hello, React!</h1> */}
                 {/* <h1>{this.props.option.symbol}</h1> */}
                 <DrawChart arg = {this.state} option={this.props.option}/>
+                <h1>hashdjashjd</h1>
+                <h1>{this.state.temp}</h1>
+                <h1>{this.props.option.ownStock[0].symbol}</h1>
             </div>
         );
     }
@@ -62,16 +65,34 @@ class Stock extends Component
             //     });
             // });
 
+            
+            var fetches = [];
+            this.props.option.ownStock.forEach(item =>
+                {
+                    fetches.push( fetch(getUrl('compact',item.symbol)).then(function(response){ 
+                        return response.json()
+               }));
+                });
+            Promise.all(fetches).then(values =>
+            {
+                var tem = getPriceDate(values[0],"");
+                var tem2 = getPriceDate(values[1],"");
+                var tt = tem.prices[0].toString() + " " + tem2.prices[0].toString();  
+                this.setState({
+                    temp: tt,
+                });
+            });
+
 
             
-            var data = setData(this.props.option.prices,this.props.option.dates,"");
-            this.setState(
-                {
-                    data:data,
-                    displayDay:-1,
-                    temp:this.props.option.symbol
-                }
-            );
+            // var data = setData(this.props.option.prices,this.props.option.dates,"");
+            // this.setState(
+            //     {
+            //         data:data,
+            //         displayDay:-1,
+            //         temp:this.props.option.symbol
+            //     }
+            // );
         }
         else
         {
