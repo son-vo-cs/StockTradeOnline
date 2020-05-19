@@ -80,15 +80,16 @@ class Stock extends Component
                     var valueTemp = [];
                     values.forEach(item => valueTemp.push(getPriceDate(item,lastDate)));
                     var newPrices = this.props.option.prices.slice();
-                    var newDates = this.props.option.prices.slice();
+                    var newDates = this.props.option.dates.slice();
                     for (var i = 0; i < valueTemp[0].prices.length; i++)
                     {
-                        var priceTemp = 0;
+                        var priceTemp = 0.0;
                         // eslint-disable-next-line no-loop-func
                         valueTemp.forEach(item => 
                         {
-                            priceTemp = priceTemp + item.prices[i];
+                            priceTemp = priceTemp + parseFloat(item.prices[i]);
                         })
+                        priceTemp = priceTemp + this.props.option.fund;
                         newPrices.push(priceTemp);
                         newDates.push(valueTemp[0].dates[i]);
 
@@ -96,7 +97,7 @@ class Stock extends Component
                     var newData = setData(newPrices, newDates, "");
                     this.setState({
                         data: newData,
-                        temp:valueTemp[0].dates[0]
+                        temp:newPrices[1]
                     });
                 });
             }
