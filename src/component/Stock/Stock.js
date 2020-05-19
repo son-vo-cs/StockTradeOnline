@@ -84,6 +84,7 @@ class Stock extends Component
                     for (var i = 0; i < valueTemp[0].prices.length; i++)
                     {
                         var priceTemp = 0;
+                        // eslint-disable-next-line no-loop-func
                         valueTemp.forEach(item => 
                         {
                             priceTemp = priceTemp + item.prices[i];
@@ -95,7 +96,7 @@ class Stock extends Component
                     var newData = setData(newPrices, newDates, "");
                     this.setState({
                         data: newData,
-                        temp:newPrices[1]
+                        temp:valueTemp[0].dates[0]
                     });
                 });
             }
