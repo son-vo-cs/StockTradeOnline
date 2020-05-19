@@ -45,22 +45,22 @@ class Stock extends Component
             var size = getSizeDate(firstDate, getDate());
             
             
-            this.props.option.ownStock.forEach(symbol =>
-            {
-                var url = getUrl(size, symbol);
-                fetch(url)
-                .then(function(response) {
-                    return response.json();
-                })
-                .then(content => {
-                    var data = convertData(content, "");
-                    this.setState({
-                        data: data,
-                        displayDay: -1,
-                        temp: data.title
-                    });
-                });
-            });
+            // this.props.option.ownStock.forEach(symbol =>
+            // {
+            //     var url = getUrl(size, symbol);
+            //     fetch(url)
+            //     .then(function(response) {
+            //         return response.json();
+            //     })
+            //     .then(content => {
+            //         var data = convertData(content, "");
+            //         this.setState({
+            //             data: data,
+            //             displayDay: -1,
+            //             temp: data.title
+            //         });
+            //     });
+            // });
 
 
             
