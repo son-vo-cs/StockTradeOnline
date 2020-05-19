@@ -44,7 +44,7 @@ class Stock extends Component
     componentDidMount(){
         if (this.props.option.symbol.length < 1)
         {
-            var length = this.props.option.datas.length;
+            var length = this.props.option.dates.length;
             var lastDate = this.props.option.dates[length-1];
             var size = getSizeDate(lastDate, getDate());
             
@@ -81,11 +81,20 @@ class Stock extends Component
                     values.forEach(item => valueTemp.push(getPriceDate(item,lastDate)));
                     var newPrices = this.props.option.prices.slice();
                     var newDates = this.props.option.prices.slice();
-                    var tem = getPriceDate(values[0],"");
-                    var tem2 = getPriceDate(values[1],"");
-                    var tt = tem.prices[0].toString() + " " + tem2.prices[0].toString();  
+                    for (var i = 0; i < valueTemp[0].prices.length; i++)
+                    {
+                        var priceTemp = 0;
+                        valueTemp.forEach(item => 
+                        {
+                            priceTemp = priceTemp + item.prices[i];
+                        })
+                        newPrices.push(priceTemp);
+                        newDates.push(valueTemp[0].dates[i]);
+
+                    }
+                    var newData = setData(newPrices, newDates, "");
                     this.setState({
-                        temp: tt,
+                        data: newData,
                     });
                 });
             }
