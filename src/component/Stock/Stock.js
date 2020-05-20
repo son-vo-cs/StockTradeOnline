@@ -42,6 +42,8 @@ class Stock extends Component
     //     // var contents = fs.readFileSync('./src/component/text.txt', 'utf8');
     //     // console.log(contents);
     // }
+
+
     componentDidMount(){
         if (this.props.option.symbol.length < 1)
         {
@@ -72,7 +74,8 @@ class Stock extends Component
                 var fetches = [];
                 this.props.option.ownStock.forEach(item =>
                     {
-                        fetches.push( fetch(getUrl('compact',item.symbol)).then(function(response){ 
+                        if (item.symbol.length > 1)
+                            fetches.push( fetch(getUrl('compact',item.symbol)).then(function(response){ 
                             return response.json()
                    }));
                     });
@@ -80,25 +83,31 @@ class Stock extends Component
                 {
                     var newData = processPerformStock(values, lastDate, this.props.option);
                     return newData;
-                }).then(newData =>
+                }).then((newData) =>
                     {
                         this.setState({
                         data: newData,
+                        updates:true,
+                        update:true,
+                        // temp:"after update"
                     })
                     });
+            }
+            else
+            {
+                var data = setData(this.props.option.prices,this.props.option.dates,"");
+                this.setState(
+                    {
+                        data:data,
+                        displayDay:-1,
+                        temp:this.props.option.symbol
+                    }
+                );
             }
             
 
 
             
-            // var data = setData(this.props.option.prices,this.props.option.dates,"");
-            // this.setState(
-            //     {
-            //         data:data,
-            //         displayDay:-1,
-            //         temp:this.props.option.symbol
-            //     }
-            // );
         }
         else
         {
@@ -125,6 +134,7 @@ class Stock extends Component
 
 
 }
+
 
 
 function processPerformStock(values, lastDate, option)

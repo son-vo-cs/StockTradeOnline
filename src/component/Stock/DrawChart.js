@@ -30,14 +30,37 @@ class DrawChart extends Component
             currentPrice: perform.currentPrice.toFixed(2),
             shares: perform.shares,
             value: (perform.shares*perform.currentPrice).toFixed(2),
-            temp: null
+            temp: null,
+            update: false
         };
         this.getTableSize = this.getTableSize.bind(this);
         // this.calculatePerform = this.calculatePerform.bind(this);
 
     }
 
-    
+    componentDidMount(){
+        if (this.props.arg.update === false)
+        {
+            alert("hashash");
+            this.setState({update: true,
+                labels:["1","2","3","4","6"],
+                datasets: [
+                    {
+                        label: 'Rainfall',
+                        fill: false,
+                        lineTension: 0.5,
+                        backgroundColor: 'blue',
+                        borderColor: 'rgb(255, 99, 132)',
+                        borderWidth: 2,
+                        data: [65, 59, 80, 81, 56],
+                        
+                        
+                        
+                    }
+                ],});
+
+        }
+    }
 
     setView(days, tempData)
     {
@@ -227,7 +250,11 @@ function calculatePerform(option)
     };
     return perform;
 
+
 }
+
+
+//************************************************************************************************** */
 
 
 export default withWindowSizeListener(DrawChart)
