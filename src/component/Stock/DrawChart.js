@@ -42,22 +42,6 @@ class DrawChart extends Component
     componentWillReceiveProps(nextProps){
         if (nextProps.arg.update !== this.props.arg.update )
         {
-            // this.setState({update: true,
-            //     labels:["1","2","3","4","6"],
-            //     datasets: [
-            //         {
-            //             label: 'Rainfall',
-            //             fill: false,
-            //             lineTension: 0.5,
-            //             backgroundColor: 'blue',
-            //             borderColor: 'rgb(255, 99, 132)',
-            //             borderWidth: 2,
-            //             data: [65, 59, 80, 81, 56],
-                        
-                        
-                        
-            //         }
-            //     ],});
             var tempData = nextProps.arg.data;
             this.setView(7,tempData);
             
