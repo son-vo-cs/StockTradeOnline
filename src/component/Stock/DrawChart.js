@@ -191,7 +191,7 @@ class DrawChart extends Component
                     </button>
                 </div>
 
-                <div style={{display: (this.props.option.showPerformance === true? "block" : "none")}}>
+                <div style={{display: (this.props.option.symbol.length > 1 && this.props.option.showPerformance === true ? "block" : "none")}}>
                     <h1>Price Buy: {this.state.priceBuy}</h1>
                     <h1>Current Price: {this.state.currentPrice}</h1>
                     <h1 className={this.state.changes >= 0 ? "profit" : "lost"}>Changes: {this.state.changes} %</h1>
