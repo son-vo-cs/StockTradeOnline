@@ -77,28 +77,6 @@ class Stock extends Component
                     });
                 Promise.all(fetches).then(values =>
                 {
-                    // var valueTemp = [];
-                    // values.forEach(item => valueTemp.push(getPriceDate(item,lastDate)));
-                    // var newPrices = this.props.option.prices.slice();
-                    // var newDates = this.props.option.dates.slice();
-                    // for (var i = 0; i < valueTemp[0].prices.length; i++)
-                    // {
-                    //     var priceTemp = 0.0;
-                    //     // eslint-disable-next-line no-loop-func
-                    //     valueTemp.forEach(item => 
-                    //     {
-                    //         priceTemp = priceTemp + parseFloat(item.prices[i]);
-                    //     })
-                    //     priceTemp = priceTemp + this.props.option.fund;
-                    //     newPrices.push(priceTemp);
-                    //     newDates.push(valueTemp[0].dates[i]);
-
-                    // }
-                    // var newData = setData(newPrices, newDates, "");
-                    // // this.setState({
-                    // //     data: newData,
-                    // //     temp:newPrices[1]
-                    // // });
                     var newData = processPerformStock(values, lastDate, this.props.option);
                     return newData;
                 }).then(newData =>
