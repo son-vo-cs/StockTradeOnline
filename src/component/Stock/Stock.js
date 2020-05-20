@@ -162,7 +162,7 @@ function processPerformStock(values, lastDate, option)
         {
             priceTemp = priceTemp + parseFloat(item.prices[i]);
         })
-        priceTemp = priceTemp + this.props.option.fund;
+        priceTemp = priceTemp + option.fund;
         newPrices.push(priceTemp);
         newDates.push(valueTemp[0].dates[i]);
 
