@@ -16,7 +16,8 @@ class Stock extends Component
             displayDay: -1,
             temp: "henhen",
             prices:[],
-            dates:[]
+            dates:[],
+            update: false
         };
 
     };
