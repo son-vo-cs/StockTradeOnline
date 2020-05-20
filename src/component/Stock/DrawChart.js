@@ -38,28 +38,32 @@ class DrawChart extends Component
 
     }
 
-    componentDidMount(){
-        if (this.props.arg.update === false)
+    
+    componentWillReceiveProps(nextProps){
+        if (nextProps.arg.update !== this.props.arg.update )
         {
-            alert("hashash");
-            this.setState({update: true,
-                labels:["1","2","3","4","6"],
-                datasets: [
-                    {
-                        label: 'Rainfall',
-                        fill: false,
-                        lineTension: 0.5,
-                        backgroundColor: 'blue',
-                        borderColor: 'rgb(255, 99, 132)',
-                        borderWidth: 2,
-                        data: [65, 59, 80, 81, 56],
+            // this.setState({update: true,
+            //     labels:["1","2","3","4","6"],
+            //     datasets: [
+            //         {
+            //             label: 'Rainfall',
+            //             fill: false,
+            //             lineTension: 0.5,
+            //             backgroundColor: 'blue',
+            //             borderColor: 'rgb(255, 99, 132)',
+            //             borderWidth: 2,
+            //             data: [65, 59, 80, 81, 56],
                         
                         
                         
-                    }
-                ],});
-
+            //         }
+            //     ],});
+            var tempData = nextProps.arg.data;
+            this.setView(7,tempData);
+            
+            
         }
+        // this.setState(nextProps.ChildData);
     }
 
     setView(days, tempData)
