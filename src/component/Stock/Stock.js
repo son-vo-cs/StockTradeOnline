@@ -99,7 +99,7 @@ class Stock extends Component
                     // //     data: newData,
                     // //     temp:newPrices[1]
                     // // });
-                    var newData = processPerformStock(values, lastDate);
+                    var newData = processPerformStock(values, lastDate, this.props.option);
                     return newData;
                 }).then(newData =>
                     {
@@ -148,12 +148,12 @@ class Stock extends Component
 }
 
 
-function processPerformStock(values, lastDate)
+function processPerformStock(values, lastDate, option)
 {
     var valueTemp = [];
     values.forEach(item => valueTemp.push(getPriceDate(item,lastDate)));
-    var newPrices = this.props.option.prices.slice();
-    var newDates = this.props.option.dates.slice();
+    var newPrices = option.prices.slice();
+    var newDates = option.dates.slice();
     for (var i = 0; i < valueTemp[0].prices.length; i++)
     {
         var priceTemp = 0.0;
