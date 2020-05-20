@@ -77,28 +77,29 @@ class Stock extends Component
                     });
                 Promise.all(fetches).then(values =>
                 {
-                    var valueTemp = [];
-                    values.forEach(item => valueTemp.push(getPriceDate(item,lastDate)));
-                    var newPrices = this.props.option.prices.slice();
-                    var newDates = this.props.option.dates.slice();
-                    for (var i = 0; i < valueTemp[0].prices.length; i++)
-                    {
-                        var priceTemp = 0.0;
-                        // eslint-disable-next-line no-loop-func
-                        valueTemp.forEach(item => 
-                        {
-                            priceTemp = priceTemp + parseFloat(item.prices[i]);
-                        })
-                        priceTemp = priceTemp + this.props.option.fund;
-                        newPrices.push(priceTemp);
-                        newDates.push(valueTemp[0].dates[i]);
+                    // var valueTemp = [];
+                    // values.forEach(item => valueTemp.push(getPriceDate(item,lastDate)));
+                    // var newPrices = this.props.option.prices.slice();
+                    // var newDates = this.props.option.dates.slice();
+                    // for (var i = 0; i < valueTemp[0].prices.length; i++)
+                    // {
+                    //     var priceTemp = 0.0;
+                    //     // eslint-disable-next-line no-loop-func
+                    //     valueTemp.forEach(item => 
+                    //     {
+                    //         priceTemp = priceTemp + parseFloat(item.prices[i]);
+                    //     })
+                    //     priceTemp = priceTemp + this.props.option.fund;
+                    //     newPrices.push(priceTemp);
+                    //     newDates.push(valueTemp[0].dates[i]);
 
-                    }
-                    var newData = setData(newPrices, newDates, "");
-                    // this.setState({
-                    //     data: newData,
-                    //     temp:newPrices[1]
-                    // });
+                    // }
+                    // var newData = setData(newPrices, newDates, "");
+                    // // this.setState({
+                    // //     data: newData,
+                    // //     temp:newPrices[1]
+                    // // });
+                    var newData = processPerformStock(values, lastDate);
                     return newData;
                 }).then(newData =>
                     {
@@ -111,14 +112,14 @@ class Stock extends Component
 
 
             
-            var data = setData(this.props.option.prices,this.props.option.dates,"");
-            this.setState(
-                {
-                    data:data,
-                    displayDay:-1,
-                    temp:this.props.option.symbol
-                }
-            );
+            // var data = setData(this.props.option.prices,this.props.option.dates,"");
+            // this.setState(
+            //     {
+            //         data:data,
+            //         displayDay:-1,
+            //         temp:this.props.option.symbol
+            //     }
+            // );
         }
         else
         {
@@ -147,19 +148,28 @@ class Stock extends Component
 }
 
 
-function getPerformStock(pricesPerform,datesPerform, pricesStock, datesStock, shares)
+function processPerformStock(values, lastDate)
 {
-    var i = 0;
-    var j = 0;
-    var newPrices = [];
-    var newDates = [];
-    while (j < datesStock.length && i < pricesPerform.length)
+    var valueTemp = [];
+    values.forEach(item => valueTemp.push(getPriceDate(item,lastDate)));
+    var newPrices = this.props.option.prices.slice();
+    var newDates = this.props.option.dates.slice();
+    for (var i = 0; i < valueTemp[0].prices.length; i++)
     {
-        if (datesPerform[i] === datesStock[j])
+        var priceTemp = 0.0;
+        // eslint-disable-next-line no-loop-func
+        valueTemp.forEach(item => 
         {
-            newPrices.push(pricesPerform[i]+pricesStock[j]*shares);
-        }
+            priceTemp = priceTemp + parseFloat(item.prices[i]);
+        })
+        priceTemp = priceTemp + this.props.option.fund;
+        newPrices.push(priceTemp);
+        newDates.push(valueTemp[0].dates[i]);
+
     }
+    var newData = setData(newPrices, newDates, "");
+    
+    return newData;
 }
 
 function setData(prices,dates, title)
