@@ -197,7 +197,6 @@ class DrawChart extends Component
                     <h1 className={this.state.changes >= 0 ? "profit" : "lost"}>Changes: {this.state.changes} %</h1>
                     <h1>Shares: {this.state.shares}</h1>
                     <h1>Total Value: {this.state.value}</h1>
-                    {/* <h1>{addDate(getDate(),1)}</h1> */}
                 </div>
 
 
