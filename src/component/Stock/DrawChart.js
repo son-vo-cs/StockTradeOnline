@@ -10,29 +10,42 @@ class DrawChart extends Component
     {
         super(props);
         var perform = calculatePerform(props.option);
-        this.state = {
-            datasets: [
-                {
-                    label: 'Rainfall',
-                    fill: false,
-                    lineTension: 0.5,
-                    backgroundColor: 'blue',
-                    borderColor: 'rgb(255, 99, 132)',
-                    borderWidth: 2,
-                    data: [65, 59, 80, 81, 56],
-                    
-                    
-                    
-                }
-            ],
-            priceBuy:perform.priceBuy.toFixed(2),
-            changes:perform.changes.toFixed(2),
-            currentPrice: perform.currentPrice.toFixed(2),
-            shares: perform.shares,
-            value: (perform.shares*perform.currentPrice).toFixed(2),
-            temp: null,
-            update: false
-        };
+        if (props.option.showPerformance === true)
+        {
+            this.state = {
+                // datasets: [
+                //     {
+                //         label: 'Rainfall',
+                //         fill: false,
+                //         lineTension: 0.5,
+                //         backgroundColor: 'blue',
+                //         borderColor: 'rgb(255, 99, 132)',
+                //         borderWidth: 2,
+                //         data: [65, 59, 80, 81, 56],
+                        
+                        
+                        
+                //     }
+                // ],
+                
+                priceBuy:perform.priceBuy.toFixed(2),
+                changes:perform.changes.toFixed(2),
+                currentPrice: perform.currentPrice.toFixed(2),
+                shares: perform.shares,
+                value: (perform.shares*perform.currentPrice).toFixed(2),
+                temp: null,
+                update: false
+            };
+        }
+        else
+        {
+            this.state = {
+                datasets: [],
+                temp: null,
+                update: false
+            }
+        }
+        
         this.getTableSize = this.getTableSize.bind(this);
         // this.calculatePerform = this.calculatePerform.bind(this);
 

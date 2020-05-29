@@ -97,31 +97,7 @@ class Home extends Component
         height: 300,
         size: 'small',
         
-        showPerformance: false,
-        history:
-        [
-          {
-            action:3,
-            hisDate: '2011',
-            price: 213,
-          },
-          
-          {
-            action:-1,
-            hisDate: '2014',
-            price: 208,
-          },
-          {
-            action:1,
-            hisDate: '2015',
-            price: 230,
-          },{
-            action:-1,
-            hisDate: '2013',
-            price: 210,
-          },
-
-        ],
+        showPerformance: false
         
 
 
