@@ -1,13 +1,22 @@
 import React from 'react';
 import "./Register.css";
 import logo from "./logo1.png";
+import { Container, Row, Col } from 'reactstrap';
 
 
 
 class Register extends React.Component {
 
+    constructor(props)
+    {
+        super(props);
+        this.state = {
+            validEmail: false,
+            textValid: "",
+            validPass: false
+        }
+    }
 
-    
     handleSubmit = (event,props) => {
         event.preventDefault();
     let body = {
@@ -61,8 +70,16 @@ class Register extends React.Component {
                             </div>
                             <div className="form-group">
                                 <label htmlFor="emailAddress">Email<span className="text-danger">*</span></label>
-                                <input type="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-                                    placeholder="Email" className="form-control" id="email"/>
+                                <Row>
+                                <div>
+                                    <Row>
+                                    <div><input type="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                                    placeholder="Email" className="form-control" style={{width:850, marginLeft: 30}} id="email"/></div>
+                                <div><label>Check Valid Email</label></div>
+                                        
+                                    </Row>   
+                                </div>
+                                </Row>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="pass1">Password<span className="text-danger">*</span></label>
