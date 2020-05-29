@@ -11,10 +11,10 @@ class Register extends React.Component {
     {
         super(props);
         this.state = {
-            validEmail: false,
+            validEmail: true,
             textValid: "Click to Check Email",
             validPass: false,
-            clickCheck: false
+            clickCheck: true
         }
     }
 
@@ -76,7 +76,13 @@ class Register extends React.Component {
                                     <Row>
                                     <div><input type="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
                                     placeholder="Email" className="form-control" style={{width:850, marginLeft: 30}} id="email"/></div>
-                                <div><label className="valid-email">{this.state.textValid}</label></div>
+                                <div>
+                                    <label className={this.state.clickCheck === false ? "normal-email" : 
+                                        this.state.validEmail === true ? "valid-email" : "invalid-email"}>
+                                        {this.state.clickCheck === false ? this.state.textValid : 
+                                        this.state.validEmail === true ? "Email is available." : <div>Email already exists <br/> {this.state.textValid}</div>}
+                                    </label>
+                                </div>
                                         
                                     </Row>   
                                 </div>
