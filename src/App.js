@@ -11,6 +11,7 @@ import Login from "./component/User/Login"
 import Home from "./component/User/Home"
 import Buy from "./component/Transaction/Buy"
 import Sell from "./component/Transaction/Sell"
+import Card from "./component/Transaction/Card"
 import Deposit from "./component/Transaction/Deposit"
 import WithDraw from "./component/Transaction/WithDraw"
 import SearchBar from "./component/Stock/SearchBar"
@@ -31,6 +32,7 @@ function App() {
             <Route exact path='/deposit' component={Deposit}/>
             <Route exact path='/withdraw' component={WithDraw}/>
             <Route exact path='/home' component={Home}/>
+            <Route exact path='/home' component={Card}/>
             
         </Switch>
     </BrowserRouter>
