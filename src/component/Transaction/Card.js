@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import "./Deposit.scss";
+import "./Card.scss";
 import { Container, Row, Col } from 'reactstrap';
 import { DropdownButton, Dropdown } from 'react-bootstrap';
 import { left } from 'glamor';
 
-class Deposit extends React.Component  {
+class Card extends React.Component  {
 
     constructor(props)
     {
