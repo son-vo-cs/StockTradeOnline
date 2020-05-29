@@ -12,14 +12,15 @@
 
 .valid-email
 {
-    margin-left: 10px;
+    margin-left: 40px;
     color: #2fcf9a;
+    font-size: 13px;
 
 }
 
 .invalid-email
 {
-    margin-left: 10px;
+    margin-left: 40px;
     color: red;
 }
 
