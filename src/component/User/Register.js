@@ -7,6 +7,7 @@ import logo from "./logo1.png";
 class Register extends React.Component {
 
 
+    
     handleSubmit = (event,props) => {
         event.preventDefault();
     let body = {
