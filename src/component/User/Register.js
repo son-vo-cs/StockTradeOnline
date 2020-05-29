@@ -61,12 +61,12 @@ class Register extends React.Component {
                             <div className="form-group">
                                 <label htmlFor="firstName">First Name<span className="text-danger">*</span></label>
                                 <input type="text" name="fname" required
-                                    placeholder="First Name" className="form-control" id="fname"/>
+                                    placeholder="First Name" className="form-control" id="fname"style={{width:850}}/>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="lastName">Last Name<span className="text-danger">*</span></label>
                                 <input type="text" name="lname" required
-                                    placeholder="Last Name" className="form-control" id="lname"/>
+                                    placeholder="Last Name" className="form-control" id="lname" style={{width:850}}/>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="emailAddress">Email<span className="text-danger">*</span></label>
@@ -75,7 +75,7 @@ class Register extends React.Component {
                                     <Row>
                                     <div><input type="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
                                     placeholder="Email" className="form-control" style={{width:850, marginLeft: 30}} id="email"/></div>
-                                <div><label>Check Valid Email</label></div>
+                                <div><label>Email is already existed. <br/>Click to Check Valid Email</label></div>
                                         
                                     </Row>   
                                 </div>
@@ -84,12 +84,12 @@ class Register extends React.Component {
                             <div className="form-group">
                                 <label htmlFor="pass1">Password<span className="text-danger">*</span></label>
                                 <input type="password" name="password" required
-                                    placeholder="Password" className="form-control" id="password"/>
+                                    placeholder="Password" className="form-control" id="password"style={{width:850}}/>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="passWord2">Confirm Password <span className="text-danger">*</span></label>
                                 <input type="password" required name='cPassword'
-                                    placeholder="Password" className="form-control" id="cPassword"/>
+                                    placeholder="Password" className="form-control" id="cPassword"style={{width:850}}/>
                             </div>
 
 

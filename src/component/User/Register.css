@@ -9,6 +9,20 @@
     padding: 0 0 20px;
     font-size: 36px;
 }
+
+.valid-email
+{
+    margin-left: 10px;
+    color: #2fcf9a;
+
+}
+
+.invalid-email
+{
+    margin-left: 10px;
+    color: red;
+}
+
   
 .register-box {
     padding: 30px;
