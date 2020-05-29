@@ -84,9 +84,9 @@ class Test extends Component
 
           <div>
           {/* // <div  style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '100vh'}}> */}
-            <Stock option={option}></Stock>
-            {/* <SearchBar argument={aa}></SearchBar> */}
-            {/* <Home></Home> */}
+            {/* <Stock option={option}></Stock> */}
+            <SearchBar argument={aa}></SearchBar>
+            <Home></Home>
         </div>
         );
       }

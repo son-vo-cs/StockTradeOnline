@@ -29,7 +29,9 @@ class Home extends Component
                 dates: ['2011','2012','2013'],
                 width: 600,
                 height: 300,
-                size: 'med'},
+                size: 'med'
+                
+            },
 
             stock:
                 {symbol: "",
@@ -86,7 +88,7 @@ class Home extends Component
 
             var option = 
             {
-              symbol: "",
+              symbol: "SPY",
               showButs: false,
               showTitle: true,
               prices: [1,2,3],
@@ -119,12 +121,12 @@ class Home extends Component
                     <div className="home-wrapper">
                         <div>
                             <p className="stocktrade">Investing</p>
-                            <Stock option={this.state.account}></Stock>
+                            <Stock option={option}></Stock>
                         </div>
                         
                     </div>
 
-                    {this.state.ownStock.map( (stock) =>  <div>
+                    {/* {this.state.ownStock.map( (stock) =>  <div>
                         <hr></hr>
                         <div className="small-graph" onClick={(e)=> alert("haha")}>
                             <Row>
@@ -135,7 +137,7 @@ class Home extends Component
                         </div>
                         <hr></hr>
                     </div>)}
-                    
+                     */}
                 </div>
           </div>
 
