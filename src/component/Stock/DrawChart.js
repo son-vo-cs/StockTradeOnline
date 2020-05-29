@@ -10,7 +10,7 @@ class DrawChart extends Component
     {
         super(props);
         var perform = calculatePerform(props.option);
-        if (props.option.showPerformance === true)
+        if (props.option.showPerformance === true && props.option.history !== undefined)
         {
             this.state = {
                 // datasets: [
@@ -225,7 +225,7 @@ class DrawChart extends Component
 
 function calculatePerform(option)
 {
-    if (option.showPerformance === false)
+    if (option.showPerformance === false || option.history === undefined)
     {
         return {
             priceBuy: 0,

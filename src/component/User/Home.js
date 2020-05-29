@@ -97,7 +97,7 @@ class Home extends Component
         height: 300,
         size: 'small',
         
-        showPerformance: false
+        showPerformance: true
         
 
 
@@ -134,7 +134,7 @@ class Home extends Component
                         
                     </div>
 
-                    {/* {this.state.ownStock.map( (stock) =>  <div>
+                    {this.state.ownStock.map( (stock) =>  <div>
                         <hr></hr>
                         <div className="small-graph" onClick={(e)=> alert("haha")}>
                             <Row>
@@ -145,7 +145,7 @@ class Home extends Component
                         </div>
                         <hr></hr>
                     </div>)}
-                     */}
+                    
                 </div>
           </div>
 
