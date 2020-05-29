@@ -87,16 +87,48 @@ class Home extends Component
         
 
             var option = 
-            {
-              symbol: "SPY",
-              showButs: false,
-              showTitle: true,
-              prices: [1,2,3],
-              dates: ['2011','2012','2013'],
-              width: 600,
-              height: 300,
-              size: 'small'
-            }
+      {
+        symbol: "SPY",
+        showButs: true,
+        showTitle: true,
+        prices: [1500],
+        dates: ['2020-05-08'],
+        width: 600,
+        height: 300,
+        size: 'small',
+        
+        showPerformance: false,
+        history:
+        [
+          {
+            action:3,
+            hisDate: '2011',
+            price: 213,
+          },
+          
+          {
+            action:-1,
+            hisDate: '2014',
+            price: 208,
+          },
+          {
+            action:1,
+            hisDate: '2015',
+            price: 230,
+          },{
+            action:-1,
+            hisDate: '2013',
+            price: 210,
+          },
+
+        ],
+        
+
+
+        
+
+        
+      }
         return(
           <div>
               

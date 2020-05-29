@@ -31,7 +31,7 @@ class Stock extends Component
             <div className="App">
                 {/* <h1>Hello, React!</h1> */}
                 {/* <h1>{this.props.option.symbol}</h1> */}
-                {/* <DrawChart arg = {this.state} option={this.props.option}/> */}
+                <DrawChart arg = {this.state} option={this.props.option}/>
                 {/* <h1>hashdjashjd</h1> */}
                 {/* <h1>{this.state.temp}</h1> */}
                 {/* <h1>{this.props.option.ownStock[0].symbol}</h1> */}
