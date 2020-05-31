@@ -9,21 +9,7 @@ class Card extends React.Component  {
     constructor(props)
     {
         super(props);
-        this.state = 
-        {
-            ticket: "SPY",
-            fund: 0,
-            price: 240.3,
-            cost:0,
-            shares:0,
-            title:"",
-            cards: 
-            {
-                "Bank of America": "5024",
-                "Chase": "2012"
-
-            }
-        }
+        
         this.handleClick = this.handleClick.bind(this);
     }
     componentDidMount()
@@ -60,7 +46,7 @@ class Card extends React.Component  {
         return (
             <div>
                 <div className="loginbox">
-                    <h1>Transfer to StockTrade</h1>
+                    <h1>Add a New Card</h1>
                     {/* <h5 className={this.state.fund >= this.state.cost ? "valid-value" : "invalid-value"}>(${this.state.fund} Available)</h5> */}
                     <form onSubmit={(event) => this.handleSubmit(event,this.props.closeModal)}>
                         <Row className="bottom">
