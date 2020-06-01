@@ -9,7 +9,25 @@ class Card extends React.Component  {
     constructor(props)
     {
         super(props);
-        
+        this.state = 
+        {
+            ticket: "SPY",
+            months: ["1","2","3","4","5","6","7","8","9","10","11","12"],
+            years:["2020","2021","2022","2023","2024","2025","2026","2027"],
+            pickmonth: "",
+            pickyear:"",
+            fund: 0,
+            price: 240.3,
+            cost:0,
+            shares:0,
+            title:"",
+            cards: 
+            {
+                "Bank of America": "5024",
+                "Chase": "2012"
+
+            }
+        }
         this.handleClick = this.handleClick.bind(this);
     }
     componentDidMount()
@@ -53,7 +71,7 @@ class Card extends React.Component  {
                             
                                 <Col>
                                     <div className="text-align2">
-                                        <h5>Enter Amount</h5>
+                                        <h5>Enter Your Credit Card Number: </h5>
                                     </div>
                                 </Col>
                                 
@@ -66,7 +84,7 @@ class Card extends React.Component  {
                             
                                 <Col>
                                     <div className="text-align">
-                                        <h5>Choose Your Card</h5>
+                                        <h5>Expiration Date</h5>
                                     </div>
                                 </Col>
                                 <Col>
