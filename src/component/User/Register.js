@@ -2,7 +2,7 @@ import React from 'react';
 import "./Register.css";
 import logo from "./logo1.png";
 import { Container, Row, Col } from 'reactstrap';
-import host from "../host"
+import Host from "../Host"
 
 
 class Register extends React.Component {
@@ -50,14 +50,17 @@ class Register extends React.Component {
 
     };
 
-    checkEmail = (event,props) => {
+    checkEmail = (event) => {
         event.preventDefault();
-        alert(event.target.fname)
+        
+        // alert(this.state.email);
+        alert(Host.host+"/hah")
     
     }
 
-    typeEmail = (email) => {
-        this.setState({email:email});
+    typeEmail = (e) => {
+        e.preventDefault();
+        this.setState({email:e.target.value});
     
     }
 
@@ -78,7 +81,7 @@ class Register extends React.Component {
                             <div className="form-group">
                                 <label htmlFor="firstName">First Name<span className="text-danger">*</span></label>
                                 <input type="text" name="fname" required
-                                    placeholder="First Name" className="form-control" id="fname"style={{width:850}}/>
+                                    placeholder="First Name" className="form-control" id="fname"style={{width:850}} onChange={(e)=>this.typeEmail(e)}/>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="lastName">Last Name<span className="text-danger">*</span></label>
@@ -94,7 +97,7 @@ class Register extends React.Component {
                                     placeholder="Email" className="form-control" style={{width:850, marginLeft: 30}} id="email"/></div>
                                 <div>
                                     <label className={this.state.clickCheck === false ? "normal-email" : 
-                                        this.state.validEmail === true ? "valid-email" : "invalid-email"} onClick={(e) => this.checkEmail(e,this.props)}>
+                                        this.state.validEmail === true ? "valid-email" : "invalid-email"} onClick={(e) => this.checkEmail(e)}>
                                         {this.state.clickCheck === false ? this.state.textValid : 
                                         this.state.validEmail === true ? "Email is available." : <div>Email already exists <br/> {this.state.textValid}</div>}
                                     </label>
