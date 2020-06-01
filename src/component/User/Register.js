@@ -2,7 +2,7 @@ import React from 'react';
 import "./Register.css";
 import logo from "./logo1.png";
 import { Container, Row, Col } from 'reactstrap';
-
+import host from "../host"
 
 
 class Register extends React.Component {
@@ -11,10 +11,10 @@ class Register extends React.Component {
     {
         super(props);
         this.state = {
-            validEmail: true,
+            validEmail: false,
             textValid: "Click to Check Email",
             validPass: false,
-            clickCheck: true
+            clickCheck: false
         }
     }
 
@@ -27,6 +27,18 @@ class Register extends React.Component {
         password: event.target.password.value,
     };
 
+    checkEmail = (event,props) => {
+        event.preventDefault();
+        alert(event.target.fname.value);
+    let body = {
+        firstname: event.target.fname.value,
+        lastname: event.target.lname.value,
+        email: event.target.email.value,
+        password: event.target.password.value,
+    };
+
+
+    
 
     if (body.password === event.target.cPassword.value) {
         // userService.userRegister(JSON.stringify(body)).then((data) => {
