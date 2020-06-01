@@ -14,7 +14,7 @@ class ApiService {
         });
     }
 
-    checkValidUser(data){return this.api('check-valid-user',data)};
+    checkValidUser(data){return this.api('check-valid-user',data, 'POST')};
 
 }
 

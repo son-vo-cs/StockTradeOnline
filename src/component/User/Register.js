@@ -2,7 +2,7 @@ import React from 'react';
 import "./Register.css";
 import logo from "./logo1.png";
 import { Container, Row, Col } from 'reactstrap';
-import Host from "../Host"
+import ApiService from '../Api/ApiService';
 
 
 class Register extends React.Component {
@@ -54,6 +54,7 @@ class Register extends React.Component {
         event.preventDefault();
         
         // alert(this.state.email);
+
         alert(Host.host+"/hah")
     
     }
