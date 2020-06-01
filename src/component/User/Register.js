@@ -102,7 +102,7 @@ class Register extends React.Component {
 
 
                             <div className="form-group submitbutton">
-                                <input type='submit' name='Submit' value="Create My Account" className="btn btn-danger" style={{backgroundColor:"#2fcf9a"}}/>
+                                <input type='submit' name='Submit' value="Create Account" className="btn btn-danger" style={{backgroundColor:"#2fcf9a"}}/>
                             </div>
                         </form>
                     </div>
