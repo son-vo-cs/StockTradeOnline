@@ -82,7 +82,20 @@ class Card extends React.Component  {
                             
                                 <Col>
                                     <div className="text-align2">
-                                        <h5>Enter Your Credit Card Number: </h5>
+                                        <h5>Credit Card Number: </h5>
+                                    </div>
+                                </Col>
+                                
+                                <Col>
+                                    <input type="text" className="field-style" pattern="[0-9]*" name="amount" onChange={this.handleChange} />
+                                </Col>
+                                
+                        </Row>
+                        <Row className="bottom">
+                            
+                                <Col>
+                                    <div className="text-align2">
+                                        <h5>Card's Name: </h5>
                                     </div>
                                 </Col>
                                 
@@ -121,7 +134,7 @@ class Card extends React.Component  {
                                 
                         </Row>
                        
-                        <input type="submit" name="deposit" value="Deposit to StockTrade"/>
+                        <input type="submit" name="deposit" value="Add a New Card"/>
 
                         {/* <a href="/register">Don't have an account? Signup here</a> */}
                     </form>
