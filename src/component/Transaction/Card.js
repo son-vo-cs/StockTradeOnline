@@ -59,6 +59,16 @@ class Card extends React.Component  {
         // this.state.title = tit;
     };
 
+    handleClickMonth(month)
+    {
+        this.setState({pickmonth:month});    
+    }
+
+    handleClickYear(year)
+    {
+        this.setState({pickyear:year});    
+    }
+
 
     render(){
         return (
@@ -89,10 +99,10 @@ class Card extends React.Component  {
                                 </Col>
                                 <Col>
                                     
-                                    <DropdownButton  id="dropdown-menu" title={this.state.title}>
+                                    <DropdownButton  id="dropdown-menu" title={this.state.pickmonth}>
                                         {
-                                            Object.entries(this.state.cards).map( ([key,val]) => 
-                                                <Dropdown.Item id="dropdown-item"  onClick={(e)=> this.handleClick(key + " " + val)}>{key + " " + val}</Dropdown.Item>
+                                            Object.entries(this.state.months).map( element => 
+                                                <Dropdown.Item id="dropdown-item"  onClick={(e)=> this.handleClick(element)}>{element}</Dropdown.Item>
                                             )
                                         }
                                     </DropdownButton>
