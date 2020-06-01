@@ -61,6 +61,7 @@ class Card extends React.Component  {
 
     handleClickMonth(month)
     {
+        alert(month)
         this.setState({pickmonth:month});    
     }
 
@@ -101,8 +102,18 @@ class Card extends React.Component  {
                                     
                                     <DropdownButton  id="dropdown-menu" title={this.state.pickmonth}>
                                         {
-                                            Object.entries(this.state.months).map( element => 
-                                                <Dropdown.Item id="dropdown-item"  onClick={(e)=> this.handleClick(element)}>{element}</Dropdown.Item>
+                                            this.state.months.map( element => 
+                                                <Dropdown.Item id="dropdown-item"  onClick={(e)=> this.handleClickMonth(element)}>{element}</Dropdown.Item>
+                                            )
+                                        }
+                                    </DropdownButton>
+                                </Col>
+                                <Col>
+                                    
+                                    <DropdownButton  id="dropdown-menu" title={this.state.pickyear}>
+                                        {
+                                            this.state.years.map( element => 
+                                                <Dropdown.Item id="dropdown-item"  onClick={(e)=> this.handleClickYear(element)}>{element}</Dropdown.Item>
                                             )
                                         }
                                     </DropdownButton>
