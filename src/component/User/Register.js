@@ -5,6 +5,31 @@ import { Container, Row, Col } from 'reactstrap';
 import ApiService from '../Api/ApiService';
 
 
+const fetch = require("node-fetch");
+
+function api(type, data, method)
+    {
+        var URL = "http://localhost:8080/" + type
+        return fetch(URL, {
+            method: method,
+            // body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json;charset=UTF-8'
+            }
+        }).then((resp) => {
+            if (!resp.ok) {
+                throw Error('User already exists');
+            }
+            return resp.json();
+        });
+    }
+var data = {
+        'email': "son@gmail.com",
+    };
+
+function checkValidUser(data){return api('api/v1/countries',data, 'GET')};
+
+
 class Register extends React.Component {
 
     constructor(props)
@@ -55,7 +80,29 @@ class Register extends React.Component {
         
         // alert(this.state.email);
 
-        alert(Host.host+"/hah")
+        // alert(Host.host+"/hah")
+        var body = {
+            "email": this.state.email
+        }
+        // ApiService.checkValidUser(body).then((data) => 
+        // {
+            alert(body.email);
+        // });
+        
+
+        
+        let url = 'http://localhost:8080/api/v1/countries';
+        fetch(url).then((resp) => {
+            if (!resp.ok) {
+                alert("resp");
+                throw Error('User already exists');
+            }
+            return resp.json();
+        }).then((content) =>{
+            alert("haha");
+            alert(content);
+        });
+        
     
     }
 
@@ -82,7 +129,7 @@ class Register extends React.Component {
                             <div className="form-group">
                                 <label htmlFor="firstName">First Name<span className="text-danger">*</span></label>
                                 <input type="text" name="fname" required
-                                    placeholder="First Name" className="form-control" id="fname"style={{width:850}} onChange={(e)=>this.typeEmail(e)}/>
+                                    placeholder="First Name" className="form-control" id="fname"style={{width:850}} />
                             </div>
                             <div className="form-group">
                                 <label htmlFor="lastName">Last Name<span className="text-danger">*</span></label>
@@ -95,7 +142,7 @@ class Register extends React.Component {
                                 <div>
                                     <Row>
                                     <div><input type="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-                                    placeholder="Email" className="form-control" style={{width:850, marginLeft: 30}} id="email"/></div>
+                                    placeholder="Email" className="form-control" style={{width:850, marginLeft: 30}} id="email" onChange={(e)=>this.typeEmail(e)}/></div>
                                 <div>
                                     <label className={this.state.clickCheck === false ? "normal-email" : 
                                         this.state.validEmail === true ? "valid-email" : "invalid-email"} onClick={(e) => this.checkEmail(e)}>

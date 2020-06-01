@@ -1,3 +1,4 @@
+const fetch = require("node-fetch");
 class ApiService {
 
     api(type, data, method)
@@ -6,7 +7,9 @@ class ApiService {
         return fetch(URL, {
             method: method,
             body: JSON.stringify(data),
-            headers: new Headers({'Content-Type': 'application/json'})
+            headers: {
+                'Content-Type': 'application/json;charset=UTF-8'
+            }
         }).then(response => {
             return response.json();
         }).catch(error =>{
