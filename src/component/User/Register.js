@@ -14,7 +14,8 @@ class Register extends React.Component {
             validEmail: false,
             textValid: "Click to Check Email",
             validPass: false,
-            clickCheck: false
+            clickCheck: false,
+            email: ""
         }
     }
 
@@ -27,15 +28,7 @@ class Register extends React.Component {
         password: event.target.password.value,
     };
 
-    checkEmail = (event,props) => {
-        event.preventDefault();
-        alert(event.target.fname.value);
-    let body = {
-        firstname: event.target.fname.value,
-        lastname: event.target.lname.value,
-        email: event.target.email.value,
-        password: event.target.password.value,
-    };
+    
 
 
     
@@ -56,6 +49,17 @@ class Register extends React.Component {
     }
 
     };
+
+    checkEmail = (event,props) => {
+        event.preventDefault();
+        alert(event.target.fname)
+    
+    }
+
+    typeEmail = (email) => {
+        this.setState({email:email});
+    
+    }
 
     render() {
         return (
@@ -90,7 +94,7 @@ class Register extends React.Component {
                                     placeholder="Email" className="form-control" style={{width:850, marginLeft: 30}} id="email"/></div>
                                 <div>
                                     <label className={this.state.clickCheck === false ? "normal-email" : 
-                                        this.state.validEmail === true ? "valid-email" : "invalid-email"}>
+                                        this.state.validEmail === true ? "valid-email" : "invalid-email"} onClick={(e) => this.checkEmail(e,this.props)}>
                                         {this.state.clickCheck === false ? this.state.textValid : 
                                         this.state.validEmail === true ? "Email is available." : <div>Email already exists <br/> {this.state.textValid}</div>}
                                     </label>
