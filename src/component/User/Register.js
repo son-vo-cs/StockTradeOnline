@@ -23,14 +23,13 @@ class Register extends React.Component {
 
     handleSubmit = (event,props) => {
         event.preventDefault();
-        if (this.state.clickCheck === false)
+        if (this.state.clickCheck === false || this.state.validEmail === false)
         {
             alert("Please check the email first!!!");
             return;
         }
     let body = {
-        firstname: event.target.fname.value,
-        lastname: event.target.lname.value,
+        name: event.target.fname.value,
         email: event.target.email.value,
         password: event.target.password.value,
     };

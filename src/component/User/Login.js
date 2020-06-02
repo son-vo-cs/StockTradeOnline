@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import "./Login.scss";
 // import {Redirect} from "react-router";
+import ApiService from '../Api/ApiService';
 
 class Login extends React.Component  {
 
@@ -10,9 +11,17 @@ class Login extends React.Component  {
             email: event.target.email.value,
             password: event.target.psw.value
         };
-
-        alert(body.email);
-
+        ApiService.login(body).then((data) => {
+            if (data.valid === false)
+            {
+                alert("The user name or password is not correct!!");
+            }
+            else
+            {
+                alert(data.name);
+            }
+        });
+        
     };
     render(){
         return (
