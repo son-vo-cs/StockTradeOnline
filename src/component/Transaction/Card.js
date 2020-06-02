@@ -3,6 +3,15 @@ import "./Card.scss";
 import { Container, Row, Col } from 'reactstrap';
 import { DropdownButton, Dropdown } from 'react-bootstrap';
 import { left } from 'glamor';
+import ApiService from '../Api/ApiService';
+
+
+const request = async () => {
+    alert("htuiuti");
+    const response = await fetch('http://localhost:8080/api/v1/countries');
+    const json = await response.json();
+    alert(json);
+}
 
 class Card extends React.Component  {
 
@@ -70,6 +79,66 @@ class Card extends React.Component  {
         this.setState({pickyear:year});    
     }
 
+    test(e)
+    {
+        e.preventDefault();
+        alert("ssssssshash");
+        const fetch = require("node-fetch");
+        let url = 'http://localhost:8080/api/v1/countries';
+        fetch(url,
+            {
+                method: 'GET',
+                headers: new Headers({
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                }),
+                credentials: 'same-origin',
+                crossDomain:true,
+                mode: 'cors'
+            }).then((resp) => {
+            if (!resp.ok) {
+                alert("resp");
+                throw Error('User already exists');
+            }
+            return resp.json();
+        }).then((content) =>{
+            alert("haha");
+            alert(content);
+        }).catch((error) => {
+             alert(error.message);
+            });
+
+
+        // let headers = new Headers();
+
+        // headers.append('Content-Type', 'application/json');
+        // headers.append('Accept', 'application/json');
+        // headers.append('Origin','http://localhost:3000');
+    
+        // fetch(url, {
+        //     mode: 'cors',
+        //     credentials: 'include',
+        //     method: 'GET',
+        //     headers: headers
+        // })
+        // .then(response => response.json())
+        // .then(json => alert(json))
+        // .catch(error => alert('Authorization failed : ' + error.message));
+
+
+//         axios.get(url)
+//   .then((response) => {
+//     // handle success
+//     console.log(response);
+//     alert("hashasds");
+//   })
+//   .catch((error) => {
+//     // handle error
+//     alert("tententen")
+//     alert(error);
+//   })    
+        // request();
+    }
 
     render(){
         return (
@@ -134,7 +203,7 @@ class Card extends React.Component  {
                                 
                         </Row>
                        
-                        <input type="submit" name="deposit" value="Add a New Card"/>
+                        <input type="submit" name="deposit" value="Add a New Card" onClick={(e)=>this.test(e)}/>
 
                         {/* <a href="/register">Don't have an account? Signup here</a> */}
                     </form>

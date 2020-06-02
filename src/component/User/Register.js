@@ -5,29 +5,6 @@ import { Container, Row, Col } from 'reactstrap';
 import ApiService from '../Api/ApiService';
 
 
-const fetch = require("node-fetch");
-
-function api(type, data, method)
-    {
-        var URL = "http://localhost:8080/" + type
-        return fetch(URL, {
-            method: method,
-            // body: JSON.stringify(data),
-            headers: {
-                'Content-Type': 'application/json;charset=UTF-8'
-            }
-        }).then((resp) => {
-            if (!resp.ok) {
-                throw Error('User already exists');
-            }
-            return resp.json();
-        });
-    }
-var data = {
-        'email': "son@gmail.com",
-    };
-
-function checkValidUser(data){return api('api/v1/countries',data, 'GET')};
 
 
 class Register extends React.Component {
@@ -46,6 +23,11 @@ class Register extends React.Component {
 
     handleSubmit = (event,props) => {
         event.preventDefault();
+        if (this.state.clickCheck === false)
+        {
+            alert("Please check the email first!!!");
+            return;
+        }
     let body = {
         firstname: event.target.fname.value,
         lastname: event.target.lname.value,
@@ -78,29 +60,20 @@ class Register extends React.Component {
     checkEmail = (event) => {
         event.preventDefault();
         
-        // alert(this.state.email);
-
-        // alert(Host.host+"/hah")
         var body = {
             "email": this.state.email
         }
-        // ApiService.checkValidUser(body).then((data) => 
-        // {
-            alert(body.email);
-        // });
-        
-
-        
-        let url = 'http://localhost:8080/api/v1/countries';
-        fetch(url).then((resp) => {
-            if (!resp.ok) {
-                alert("resp");
-                throw Error('User already exists');
+        ApiService.checkValidUser(body).then((data)=>
+        {
+            this.setState({clickCheck:true});
+            if (data.result === true)
+            {
+                this.setState({validEmail: true});
             }
-            return resp.json();
-        }).then((content) =>{
-            alert("haha");
-            alert(content);
+            else
+            {
+                this.setState({validEmail:false});
+            }
         });
         
     
