@@ -19,6 +19,7 @@ class ApiService {
 
     checkValidUser(data){return this.api('check-valid-user',data, 'POST')};
     register(data){return this.api('register', data, 'POST')};
+    login(data){return this.api('login', data,'POST')};
 
 }
 

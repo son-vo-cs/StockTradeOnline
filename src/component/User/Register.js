@@ -41,6 +41,14 @@ class Register extends React.Component {
     
 
     if (body.password === event.target.cPassword.value) {
+        ApiService.register(body).then((data)=>
+        {
+            alert("Register Succeed");
+            props.history.push('/');
+        }).catch((error)=>
+        {
+            alert(error.message);
+        });
         // userService.userRegister(JSON.stringify(body)).then((data) => {
         //    // console.log(data);
         //     console.log(props,"myprops")
