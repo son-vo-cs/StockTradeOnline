@@ -110,4 +110,13 @@ function filterSearch(data, typeText)
                         
 }
 
+function compare(a, b) {
+    return a.label > b.label ? 1 : b.label > a.label ? -1 : 0;
+}
+
+function prepareCompanies()
+{
+    
+}
+
 export default SearchBar;
