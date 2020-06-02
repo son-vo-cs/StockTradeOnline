@@ -163,16 +163,17 @@ function processPerformStock(values, lastDate, option)
 
 function setData(prices,dates, title)
 {
-    var priceweek = prices.slice(0,7);
-    var pricemonth = prices.slice(0,30);
+    var length = prices.length;
+    var priceweek = prices.slice(length-7,length);
+    var pricemonth = prices.slice(length-30,length);
 
     var data =
         {
             pricesWeek: priceweek,
             pricesMonth: pricemonth,
             pricesAll: prices,
-            datesWeek: dates.slice(0,7),
-            datesMonth: dates.slice(0,30),
+            datesWeek: dates.slice(length-7,length),
+            datesMonth: dates.slice(length-30,length),
             datesAll: dates,
             title : title,
             colorWeek: (priceweek[priceweek.length-1] >= priceweek[0] ? "#2fcf9a" : "red"),
