@@ -5,6 +5,8 @@ import Select from 'react-select'
 // import "./Buy.scss";
 import ReactSearchBox from 'react-search-box'
 
+var fs = require('fs');
+
 class SearchBar extends React.Component  {
 
     constructor(props)
@@ -19,11 +21,22 @@ class SearchBar extends React.Component  {
                 "Microsoft Inc": "MSFT",
             },
             typedText: "",
+            options: []
             
         }
     }
     componentDidMount(){
-        this.setState({data: this.props.argument.data});
+        // this.setState({data: this.props.argument.data});
+        fs.readFile('companies.txt', 'utf8', function(err, contents) {
+        const lines = contents.split(/\r?\n/);
+
+        for (var i = 0; i < lines.length; i++)
+        {
+            var items = lines[i].split("\t");
+            console.log(items[2] + ": " + items[1])
+        }
+        });
+         
         
     }
 
@@ -40,8 +53,8 @@ class SearchBar extends React.Component  {
     };
 
     handleChange = (event) => {
-        this.setState({typedText: event.target.value});
-        alert(event)
+        // this.setState({typedText: event.target.value});
+        // alert(event)
 
     };
 
@@ -69,7 +82,7 @@ const options = [
         openMenuOnClick={false}
         hideSelectedOptions={false}
       />
-                <input type="text" value={this.state.typedText} placeholder="Search for Stocks" onChange={this.handleChange} className="searchBar"></input>
+                {/* <input type="text" value={this.state.typedText} placeholder="Search for Stocks" onChange={this.handleChange} className="searchBar"></input>
                     {
                         // Object.entries(this.state.data).filter( ([key,val]) => 
                         // {return this.state.typedText.length>=1 && (key.includes(this.state.typedText) || val.includes(this.state.typedText) )} )
@@ -86,7 +99,7 @@ const options = [
                         </div>
                         
                     
-                    }
+                    } */}
 
 
             </div>
@@ -114,9 +127,5 @@ function compare(a, b) {
     return a.label > b.label ? 1 : b.label > a.label ? -1 : 0;
 }
 
-function prepareCompanies()
-{
-    
-}
 
 export default SearchBar;
