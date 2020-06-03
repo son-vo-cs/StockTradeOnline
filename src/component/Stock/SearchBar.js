@@ -4,8 +4,7 @@ import { DropdownButton, Dropdown } from 'react-bootstrap';
 import Select from 'react-select'
 // import "./Buy.scss";
 import ReactSearchBox from 'react-search-box'
-
-var fs = require('fs');
+import {companies} from './Companies'
 
 class SearchBar extends React.Component  {
 
@@ -27,15 +26,21 @@ class SearchBar extends React.Component  {
     }
     componentDidMount(){
         // this.setState({data: this.props.argument.data});
-        fs.readFile('companies.txt', 'utf8', function(err, contents) {
-        const lines = contents.split(/\r?\n/);
+        
 
-        for (var i = 0; i < lines.length; i++)
-        {
-            var items = lines[i].split("\t");
-            console.log(items[2] + ": " + items[1])
-        }
-        });
+        // fs.readFile('companies.txt', 'utf8', function(err, contents) {
+        // const lines = contents.split(/\r?\n/);
+        // var option = [];
+        // for (var i = 0; i < lines.length; i++)
+        // {
+        //     var items = lines[i].split("\t");
+        //     var label = items[2] + ": " + items[1];
+        //     option.push({label:label});
+        // }
+        // this.setState({options:option});
+        // alert(companies.length)
+
+        // });
          
         
     }
@@ -78,7 +83,7 @@ const options = [
                 <Select
         value={null}
         onChange={this.handleDrop}
-        options={options}
+        options={companies}
         openMenuOnClick={false}
         hideSelectedOptions={false}
       />
