@@ -18,30 +18,10 @@ class Home extends Component
             userName: "Son",
             userStatus: 'Login',
             open: false,
-            data: {"Michael": "Mi ly", "MSFT": "Microsoft Inc", "MA": "Mama"},
-            fund: 100,
-            ownStock: ["SPY","AAPL"],
-            account:
-                {symbol: "SPY",
-                showButs: false,
-                showTitle: true,
-                prices: [1,2,3],
-                dates: ['2011','2012','2013'],
-                width: 600,
-                height: 300,
-                size: 'med'
-                
-            },
-
-            stock:
-                {symbol: "",
-                showButs: false,
-                showTitle: true,
-                prices: [1,2,3],
-                dates: ['2011','2012','2013'],
-                width: 600,
-                height: 300,
-                size: 'small'}
+            data: {},
+            fund: 0,
+            ownStock: [],
+           
         };
 
 
