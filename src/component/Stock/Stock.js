@@ -45,6 +45,8 @@ class Stock extends Component
 
 
     componentDidMount(){
+        if (this.props.option.symbol === undefined)
+        return;
         if (this.props.option.symbol.length < 1)
         {
             var length = this.props.option.dates.length;
@@ -190,7 +192,12 @@ function getPriceDate(contents, specific)
     // var dataJSON = JSON.parse(contents.toString());
     var dataJSON = contents;
     dataJSON = dataJSON['Time Series (Daily)'];
-    var keys = Object.keys(dataJSON);
+    try{
+    var keys = Object.keys(dataJSON);}
+    catch(er)
+    {
+        alert(contents)
+    }
     var limit = 500;
     var i = Math.min(keys.length-1,limit);
     if (specific.length > 0)

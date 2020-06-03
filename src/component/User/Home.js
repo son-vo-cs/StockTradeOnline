@@ -21,6 +21,7 @@ class Home extends Component
             data: {},
             fund: 0,
             ownStock: [],
+            popular: ["AAPL", "AMZN", "FB", "GOOG","NFLX"]
            
         };
 
@@ -121,6 +122,18 @@ class Home extends Component
 
                                 <h1 className="first-col">Title</h1>
                                 <div className="second-col"><Stock option={getOptionGraph(stock,false,undefined,undefined,undefined,600,300,'small')}></Stock></div>
+                            </Row>
+                        </div>
+                        <hr></hr>
+                    </div>)}
+                    <p className="stocktrade">Popular Stocks</p>
+                    {this.state.popular.map( (stock) =>  <div>
+                        <hr></hr>
+                        <div className="small-graph" onClick={(e)=> alert("haha")}>
+                            <Row>
+
+                                <h1 className="first-col">Title</h1>
+                                <div className="second-col"><Stock option={getOptionGraph(stock,false,true,undefined,undefined,600,300,'small')}></Stock></div>
                             </Row>
                         </div>
                         <hr></hr>
