@@ -158,7 +158,21 @@ function getOptionGraph(
     return option
 }
 
-
+function processPerform(performs)
+{
+    var dates = [];
+    var prices = [];
+    performs.forEach(item => {
+        dates.push(item.date);
+        prices.push(item.price);
+    });
+    var result = 
+    {
+        dates: dates,
+        prices: prices
+    };
+    return result;
+}
 
 
 
