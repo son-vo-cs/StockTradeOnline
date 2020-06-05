@@ -7,6 +7,7 @@ import ReactSearchBox from 'react-search-box'
 import {companies} from './Companies'
 import Login from '../User/Login'
 import Modal from '@material-ui/core/Modal';
+import Stock from '../Stock/Stock'
 
 class SearchBar extends React.Component  {
 
@@ -96,7 +97,7 @@ const options = [
                     aria-describedby="simple-modal-description"
                     open={this.state.open}
                     onClose={() => this.setState({open:false, modalActive: false})}>
-                    <Login closeModal={this.handleClose} parentData={this.props}/>
+                    <Stock option={getOptionGraph(stock,false,true,undefined,undefined,600,300,'small')}></Stock>
                 </Modal>
             </div> : ""
       }
