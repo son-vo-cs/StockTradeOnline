@@ -68,7 +68,7 @@ class Header extends Component
                       <div {...this.hoverStyle("#2fcf9a","white","white","#2fcf9a")} onClick={()=>this.props.history.push('/stock')}>SIGN UP</div>
                   </Nav>
               </Navbar>
-              <Modal
+                <Modal
                     aria-labelledby="simple-modal-title"
                     aria-describedby="simple-modal-description"
                     open={this.state.open}

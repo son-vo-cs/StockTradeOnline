@@ -5,6 +5,8 @@ import Select from 'react-select'
 // import "./Buy.scss";
 import ReactSearchBox from 'react-search-box'
 import {companies} from './Companies'
+import Login from '../User/Login'
+import Modal from '@material-ui/core/Modal';
 
 class SearchBar extends React.Component  {
 
@@ -14,13 +16,12 @@ class SearchBar extends React.Component  {
         this.state = 
         {
             data:{
-                "AAPL": "Apple",
-                "Apple": "AAPL",
-                "MSFT": "Microsoft Inc",
-                "Microsoft Inc": "MSFT",
             },
             typedText: "",
-            options: []
+            options: [],
+            open: false,
+            modalActive: false,
+            modalSymbol:""
             
         }
     }
@@ -65,8 +66,8 @@ class SearchBar extends React.Component  {
 
     handleDrop = selectOption =>
     {
-        alert(selectOption)
-        alert(selectOption.value)
+        var items = selectOption.label.split(":");
+        this.setState({open:true, modalActive: true, modalSymbol:items[0]});
     }
 
     render(){
@@ -87,6 +88,19 @@ const options = [
         openMenuOnClick={false}
         hideSelectedOptions={false}
       />
+      {
+          this.state.modalActive === false ? 
+            <div>
+                <Modal
+                    aria-labelledby="simple-modal-title"
+                    aria-describedby="simple-modal-description"
+                    open={this.state.open}
+                    onClose={() => this.setState({open:false, modalActive: false})}>
+                    <Login closeModal={this.handleClose} parentData={this.props}/>
+                </Modal>
+            </div> : ""
+      }
+      
                 {/* <input type="text" value={this.state.typedText} placeholder="Search for Stocks" onChange={this.handleChange} className="searchBar"></input>
                     {
                         // Object.entries(this.state.data).filter( ([key,val]) => 
@@ -134,3 +148,28 @@ function compare(a, b) {
 
 
 export default SearchBar;
+
+function getOptionGraph( 
+    symbol = "",
+    showButs = false,
+    showTitle = true,
+    prices = [1,2,3],
+    dates = ['2011','2012','2013'],
+    width = 600,
+    height =  300,
+    size=  'small'
+  )
+{
+  var option = 
+  {
+    symbol: symbol,
+    showButs: showButs,
+    showTitle: showTitle,
+    prices: prices,
+    dates: dates,
+    width: width,
+    height: height,
+    size: size
+  }
+  return option
+}

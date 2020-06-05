@@ -100,8 +100,8 @@ class Test extends Component
           <div>
           {/* // <div  style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '100vh'}}> */}
             {/* <Stock option={option}></Stock> */}
-            {/* <SearchBar argument={aa}></SearchBar> */}
-            <Home user={user} account={account} performs={performs}></Home>
+            <SearchBar argument={aa} user={user}></SearchBar>
+            {/* <Home user={user} account={account} performs={performs}></Home> */}
         </div>
         );
       }

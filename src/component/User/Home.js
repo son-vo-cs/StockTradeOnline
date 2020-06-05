@@ -125,8 +125,8 @@ class Home extends Component
                             </Row>
                         </div>
                         <hr></hr>
-                    </div>)}
-                    <p className="stocktrade">Popular Stocks</p>
+                    </div>)} */}
+                    {/* <p className="stocktrade">Popular Stocks</p>
                     {this.state.popular.map( (stock) =>  <div>
                         <hr></hr>
                         <div className="small-graph" onClick={(e)=> alert("haha")}>
