@@ -8,6 +8,7 @@ import {companies} from './Companies'
 import Login from '../User/Login'
 import Modal from '@material-ui/core/Modal';
 import Stock from '../Stock/Stock'
+import { Redirect } from 'react-router-dom';
 
 class SearchBar extends React.Component  {
 
@@ -64,11 +65,20 @@ class SearchBar extends React.Component  {
         // alert(event)
 
     };
-
+    renderRedirect = () => {
+        if (this.state.modalActive) {
+          return <Redirect  to={{
+            pathname: "/login",
+            state: { test:"haha" }
+          }}
+        />
+        }
+      }
     handleDrop = selectOption =>
     {
         var items = selectOption.label.split(":");
-        this.setState({open:true, modalActive: true, modalSymbol:items[0]});
+        this.setState({open:true, modalActive: true, modalSymbol:items[0]}) 
+        
     }
 
     render(){
@@ -89,18 +99,8 @@ const options = [
         openMenuOnClick={false}
         hideSelectedOptions={false}
       />
-      {
-          this.state.modalActive === false ? 
-            <div>
-                <Modal
-                    aria-labelledby="simple-modal-title"
-                    aria-describedby="simple-modal-description"
-                    open={this.state.open}
-                    onClose={() => this.setState({open:false, modalActive: false})}>
-                    <Stock option={getOptionGraph(stock,false,true,undefined,undefined,600,300,'small')}></Stock>
-                </Modal>
-            </div> : ""
-      }
+      {/* {alert(this.state.modalSymbol)} */}
+      {this.renderRedirect()}
       
                 {/* <input type="text" value={this.state.typedText} placeholder="Search for Stocks" onChange={this.handleChange} className="searchBar"></input>
                     {

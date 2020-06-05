@@ -26,6 +26,7 @@ class Login extends React.Component  {
     render(){
         return (
             <div>
+                {alert(this.props.location.state.test)}
                 <div className="loginbox">
                     <h1 className>Login</h1>
                     <h6>Please enter your e-mail and password:</h6>
