@@ -174,3 +174,5 @@ function getOptionGraph(
   }
   return option
 }
+
+export default SearchBar;
