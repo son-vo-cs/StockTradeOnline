@@ -15,7 +15,7 @@ class PageStock extends React.Component  {
         }
     }
   
-
+ 
 
    
     render(){
