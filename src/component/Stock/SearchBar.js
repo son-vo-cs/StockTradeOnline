@@ -67,6 +67,7 @@ class SearchBar extends React.Component  {
     };
     renderRedirect = () => {
         if (this.state.modalActive) {
+
           return <Redirect  to={{
             pathname: "/login",
             state: { test:"haha" }
@@ -158,7 +159,12 @@ function getOptionGraph(
     dates = ['2011','2012','2013'],
     width = 600,
     height =  300,
-    size=  'small'
+    size=  'small',
+    showPerformance= false,
+    history = [],
+    showAccount = false,
+    fund = 0,
+    ownStock=[]
   )
 {
   var option = 
@@ -170,7 +176,12 @@ function getOptionGraph(
     dates: dates,
     width: width,
     height: height,
-    size: size
+    size: size,
+    showPerformance: showPerformance,
+    history: history,
+    showAccount: showAccount,
+    fund: fund,
+    ownStock: ownStock
   }
   return option
 }
