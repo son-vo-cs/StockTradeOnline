@@ -15,6 +15,7 @@ import Deposit from "./component/Transaction/Deposit"
 import WithDraw from "./component/Transaction/WithDraw"
 import SearchBar from "./component/Stock/SearchBar"
 import Card from "./component/Transaction/Card"
+import PageStock from "./component/Stock/PageStock"
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
             <Route exact path='/withdraw' component={WithDraw}/>
             <Route exact path='/home' component={Home}/>
             <Route exact path='/card' component={Card}/>
+            <Route exact path='/p-stock' component={PageStock}/>
             
         </Switch>
     </BrowserRouter>
