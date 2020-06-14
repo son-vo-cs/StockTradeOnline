@@ -34,7 +34,7 @@ function App() {
             <Route exact path='/withdraw' component={WithDraw}/>
             <Route exact path='/home' component={Home}/>
             <Route exact path='/card' component={Card}/>
-            <Route exact path='/p-stock' component={PageStock}/>
+            <Route exact path='/page-stock' component={PageStock}/>
             
         </Switch>
     </BrowserRouter>

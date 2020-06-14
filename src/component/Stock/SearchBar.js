@@ -7,7 +7,7 @@ import ReactSearchBox from 'react-search-box'
 import {companies} from './Companies'
 import Login from '../User/Login'
 import Modal from '@material-ui/core/Modal';
-import Stock from '../Stock/Stock'
+import PageStock from '../Stock/PageStock'
 import { Redirect } from 'react-router-dom';
 
 class SearchBar extends React.Component  {
@@ -67,10 +67,16 @@ class SearchBar extends React.Component  {
     };
     renderRedirect = () => {
         if (this.state.modalActive) {
+            var option = getOptionGraph( this.state.modalSymbol,true,true,
+                undefined,undefined,undefined,undefined,'med',true,[],false,0,[])
+            
+            if (this.props.ownStock === undefined || this.props.ownStock.length === 0)
+                option = getOptionGraph( this.state.modalSymbol,true,true,
+                    undefined,undefined,undefined,undefined,'med',false,[],false,0,[])
 
           return <Redirect  to={{
-            pathname: "/login",
-            state: { test:"haha" }
+            pathname: "/page-stock",
+            option: option
           }}
         />
         }
