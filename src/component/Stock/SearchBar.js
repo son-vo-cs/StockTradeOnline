@@ -82,7 +82,7 @@ class SearchBar extends React.Component  {
                         undefined,undefined,undefined,undefined,'med',true,[],false,0,[])
             }
                 
-
+            // alert(this.props.ownStock)
           return <Redirect  to={{
             pathname: "/page-stock",
             option: option,
