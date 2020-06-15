@@ -34,7 +34,7 @@ class Test extends Component
         height: 300,
         size: 'small',
         
-        showPerformance: true,
+        showPerformance: false,
         history:
         [
           {
@@ -99,7 +99,7 @@ class Test extends Component
 
           <div>
           {/* // <div  style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '100vh'}}> */}
-            {/* <Stock option={option}></Stock> */}
+            <Stock option={option}></Stock>
             {/* <SearchBar argument={aa} user={user}></SearchBar> */}
             {/* <Home user={user} account={account} performs={performs}></Home> */}
         </div>

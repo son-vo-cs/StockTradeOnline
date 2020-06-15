@@ -23,7 +23,7 @@ class PageStock extends React.Component  {
 
             <div>
             {/* // <div  style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '100vh'}}> */}
-              <Stock option={this.props.location.option}></Stock>
+              <Stock option={this.props.location.option} user={this.props.location.user}></Stock>
               {/* <SearchBar argument={aa} user={user}></SearchBar> */}
               {/* <Home user={user} account={account} performs={performs}></Home> */}
           </div>

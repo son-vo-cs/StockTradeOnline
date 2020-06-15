@@ -67,17 +67,27 @@ class SearchBar extends React.Component  {
     };
     renderRedirect = () => {
         if (this.state.modalActive) {
+            var showSell = false;
             var option = getOptionGraph( this.state.modalSymbol,true,true,
-                undefined,undefined,undefined,undefined,'med',true,[],false,0,[])
+                undefined,undefined,undefined,undefined,'med',false,[],false,0,[])
             
-            if (this.props.ownStock === undefined || this.props.ownStock.length === 0)
-                option = getOptionGraph( this.state.modalSymbol,true,true,
-                    undefined,undefined,undefined,undefined,'med',false,[],false,0,[])
+            if (this.props.ownStock !== undefined && this.props.ownStock.length > 0)
+            {
+                this.props.ownStock.forEach(item => {
+                    if (this.state.modalSymbol === item.symbol)
+                        showSell = true;
+                });
+                if (showSell)
+                    option = getOptionGraph( this.state.modalSymbol,true,true,
+                        undefined,undefined,undefined,undefined,'med',true,[],false,0,[])
+            }
+                
 
           return <Redirect  to={{
             pathname: "/page-stock",
             option: option,
-            user: this.props.user
+            user: this.props.user,
+            showSell: showSell
           }}
         />
         }
