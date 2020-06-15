@@ -76,7 +76,8 @@ class SearchBar extends React.Component  {
 
           return <Redirect  to={{
             pathname: "/page-stock",
-            option: option
+            option: option,
+            user: this.props.user
           }}
         />
         }
