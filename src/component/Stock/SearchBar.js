@@ -79,7 +79,7 @@ class SearchBar extends React.Component  {
                 });
                 if (showSell)
                     option = getOptionGraph( this.state.modalSymbol,true,true,
-                        undefined,undefined,undefined,undefined,'med',true,[],false,0,[])
+                        undefined,undefined,undefined,undefined,'med',true,this.props.history,false,0,[])
             }
                 
             // alert(this.props.ownStock)

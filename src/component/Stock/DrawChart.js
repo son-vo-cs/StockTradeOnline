@@ -203,21 +203,18 @@ class DrawChart extends Component
                         {"All"}
                     </button>
                 </div>
-                <div className="Week-button">
-                    <div>
-                        <button
-                            className="square" onClick={() => this.handleClick(7,tempData)}
-                        >
-                            {"Buy Stock"}
-                        </button>
-                    </div>
-                    <div style={{display: (this.props.option.showSell === true? "block" : "none")}}> 
-                        <button
-                                className="square" onClick={() => this.handleClick(7,tempData)}
-                            >
-                                {"Sell Stock"}
-                            </button>
-                    </div>
+                <div className="Week-button" style={{display: (this.props.option.showButs === true? "block" : "none")}}>
+                    <button
+                        className="square" onClick={() => this.handleClick(7,tempData)}
+                    >
+                        {"Buy " + this.props.option.symbol}
+                    </button>
+                    <button style={{display: (this.props.showSell === true? "block" : "none")}}
+                        className="Month-button" onClick={() => this.handleClick(30,tempData)}
+                    >
+                        {"Sell " + this.props.option.symbol}
+                    </button>
+                    
                 </div>
                 
 

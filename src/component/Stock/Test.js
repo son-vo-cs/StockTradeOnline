@@ -102,7 +102,7 @@ class Test extends Component
             {/* <Stock option={option}></Stock> */}
             {/* <SearchBar argument={aa} user={user}></SearchBar> */}
             {/* {alert(option.ownStock.length)} */}
-            <SearchBar ownStock={option.ownStock}></SearchBar>
+            <SearchBar ownStock={option.ownStock} history={option.history}></SearchBar>
             {/* <Home user={user} account={account} performs={performs}></Home> */}
         </div>
         );
