@@ -20,6 +20,10 @@ class ApiService {
     checkValidUser(data){return this.api('check-valid-user',data, 'POST')};
     register(data){return this.api('register', data, 'POST')};
     login(data){return this.api('login', data,'POST')};
+    buyStock(data){return this.api('add-stock', data,'POST')};
+    deposit(data){return this.api('set-fund', data,'POST')};
+    
+    
 
 }
 

@@ -5,6 +5,7 @@ import Stock from './Stock'
 import {Line} from 'react-chartjs-2';
 import SearchBar from './SearchBar'
 import Home from '../User/Home'
+import Deposit from '../Transaction/Deposit'
 
 const data = {
   labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
@@ -99,11 +100,12 @@ class Test extends Component
 
           <div>
           {/* // <div  style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '100vh'}}> */}
-            {/* <Stock option={option}></Stock> */}
+            {/* <Stock option={option} user={user}></Stock> */}
             {/* <SearchBar argument={aa} user={user}></SearchBar> */}
             {/* {alert(option.ownStock.length)} */}
-            <SearchBar ownStock={option.ownStock} history={option.history}></SearchBar>
+            {/* <SearchBar ownStock={option.ownStock} history={option.history}></SearchBar> */}
             {/* <Home user={user} account={account} performs={performs}></Home> */}
+            <Deposit user={user}></Deposit>
         </div>
         );
       }
