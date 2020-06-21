@@ -7,6 +7,8 @@ import SearchBar from './SearchBar'
 import Home from '../User/Home'
 import Deposit from '../Transaction/Deposit'
 import { Redirect } from 'react-router-dom';
+import ApiService from '../Api/ApiService';
+
 const data = {
   labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
   datasets: [
@@ -27,10 +29,35 @@ class Test extends Component
 
   homeRedirect = () =>
     {
-        if (this.state.userStatus === 'Login')
-        {
-            this.setState({open:true})
-        }
+      return <Redirect  to={{
+        pathname: "/home",
+        user:{
+          userName: "Son",
+          userId: 1,
+          fund: 1500
+      }
+      }}
+    />
+    }
+
+    performTest = () =>
+    {
+      let body = {
+        
+          id: 2,
+          day:"2020-06-20",
+          price: 1600
+        
+        
+       };
+       ApiService.addPerform(body).then((data)=>
+       {
+           alert("Deposit Succeed");
+           
+       }).catch((error)=>
+       {
+           alert(error.message);
+       });
     }
 
 
@@ -116,7 +143,11 @@ class Test extends Component
             {/* {alert(option.ownStock.length)} */}
             {/* <SearchBar ownStock={option.ownStock} history={option.history}></SearchBar> */}
             {/* <Home user={user} account={account} performs={performs}></Home> */}
-            <Deposit user={user}></Deposit>
+            {/* <Deposit user={user}></Deposit> */}
+            {this.performTest()}
+
+            {/* {this.homeRedirect()} */}
+                        
         </div>
         );
       }

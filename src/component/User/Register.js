@@ -32,6 +32,7 @@ class Register extends React.Component {
         name: event.target.fname.value,
         email: event.target.email.value,
         password: event.target.password.value,
+        fund: event.target.fund.value
     };
 
     
@@ -43,6 +44,7 @@ class Register extends React.Component {
         ApiService.register(body).then((data)=>
         {
             alert("Register Succeed");
+            
             props.history.push('/');
         }).catch((error)=>
         {
@@ -144,6 +146,12 @@ class Register extends React.Component {
                                 <label htmlFor="passWord2">Confirm Password <span className="text-danger">*</span></label>
                                 <input type="password" required name='cPassword'
                                     placeholder="Password" className="form-control" id="cPassword"style={{width:850}}/>
+                            </div>
+
+                            <div className="form-group">
+                                <label htmlFor="fund">Set Initial Fund<span className="text-danger">*</span></label>
+                                <input type="text" name="fund" required
+                                    placeholder="0.00" className="form-control" id="fund"pattern="[0-9]+([\.,][0-9]+)?" step="0.01" style={{width:850}}/>
                             </div>
 
 

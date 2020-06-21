@@ -22,7 +22,8 @@ class ApiService {
     login(data){return this.api('login', data,'POST')};
     buyStock(data){return this.api('add-stock', data,'POST')};
     deposit(data){return this.api('set-fund', data,'PUT')};
-    
+    addPerform(data){return this.api('add-perform', data,'POST')};
+    addPerformMultiple(data){return this.api('add-performs', data,'POST')};
     
 
 }
