@@ -3,6 +3,8 @@ import "./Deposit.scss";
 import { Container, Row, Col } from 'reactstrap';
 import { DropdownButton, Dropdown } from 'react-bootstrap';
 import { left } from 'glamor';
+import ApiService from '../Api/ApiService';
+
 
 class Deposit extends React.Component  {
 
@@ -32,16 +34,25 @@ class Deposit extends React.Component  {
     }
     handleSubmit = (event,closeModal) => {
         event.preventDefault();
-        // let body = {
-        //     email: event.target.email.value,
-        //     password: event.target.psw.value
-        // };
+        let body = {
+            id: this.props.user.userId,
+            fund: event.target.amount.value
+        };
 
-        // alert(body.email);
-        if (this.state.fund < this.state.cost)
+        // alert(body.fund);
+        ApiService.deposit(body).then((data)=>
         {
-            alert("You don't have enough fund to place this order!!");
-        }
+            alert("Deposit Succeed");
+            var temp = body.id;
+            // this.props.history.push({
+            //     pathname: '/',
+            //     id: temp
+            //   });
+        }).catch((error)=>
+        {
+            alert(error.message);
+        });
+        
 
     };
 
@@ -72,7 +83,7 @@ class Deposit extends React.Component  {
                                 </Col>
                                 
                                 <Col>
-                                    <input type="text" className="field-style" pattern="[0-9]*" name="amount" onChange={this.handleChange} />
+                                    <input type="text" className="field-style" pattern="[0-9]+([\.,][0-9]+)?" step="0.01" name="amount" onChange={this.handleChange} />
                                 </Col>
                                 
                         </Row>

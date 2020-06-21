@@ -6,7 +6,7 @@ import {Line} from 'react-chartjs-2';
 import SearchBar from './SearchBar'
 import Home from '../User/Home'
 import Deposit from '../Transaction/Deposit'
-
+import { Redirect } from 'react-router-dom';
 const data = {
   labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
   datasets: [
@@ -23,6 +23,17 @@ const data = {
 
 class Test extends Component
 {
+
+
+  homeRedirect = () =>
+    {
+        if (this.state.userStatus === 'Login')
+        {
+            this.setState({open:true})
+        }
+    }
+
+
     render() {
       var option = 
       {
